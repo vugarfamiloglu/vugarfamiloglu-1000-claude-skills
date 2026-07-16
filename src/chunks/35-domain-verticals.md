@@ -1,0 +1,22 @@
+## Domain Verticals
+
+- `double-entry-ledger-designer` — Designs append-only double-entry ledger schemas with integer minor units, balanced journal entries, and clearing accounts for wallet, payout, or billing systems.
+- `iso20022-message-mapper` — Maps payment data onto pain.001, pacs.008, and camt.053 schemas, flagging XSD violations and MT-to-MX gaps during bank rail integration.
+- `hl7-fhir-migrator` — Maps legacy HL7 v2 segments like PID and OBX onto FHIR R4 resources when migrating an interface engine feed, flagging terminology gaps.
+- `phi-exposure-auditor` — Traces PHI through logs, analytics SDKs, and backups against the eighteen Safe Harbor identifiers, drafting a remediation checklist for a privacy officer.
+- `product-feed-validator` — Validates Google Merchant Center and Meta catalog feeds against required attributes, GTIN check digits, and availability enums before submission.
+- `returns-rma-planner` — Plans returns and RMA flows for online stores, covering restocking fees, EU fourteen-day withdrawal rights, reverse-logistics labels, and refund tender rules.
+- `reso-listing-mapper` — Maps property records onto RESO Data Dictionary fields and Web API OData queries when syncing MLS feeds, resolving enum and status mismatches.
+- `comparable-sales-analyzer` — Builds comparable-sales grids with paired-sales adjustments for living area, condition, and market timing, producing a draft valuation for a licensed appraiser.
+- `edi-transaction-mapper` — Maps purchase orders and shipments onto X12 850, 856, and 810 or EDIFACT equivalents, validating ISA envelopes and 997 acknowledgments.
+- `hts-code-classifier` — Proposes HS and HTS codes using the General Rules of Interpretation, flags origin and valuation risks, and leaves confirmation to a customs broker.
+- `rollback-netcode-designer` — Designs client prediction, server reconciliation, and rollback windows with tick rates and lag compensation for real-time multiplayer games.
+- `game-economy-balancer` — Models currency faucets, sinks, and drop-table expected values, projecting inflation and checking loot-odds disclosure rules before a live-ops season.
+- `ediscovery-load-file-builder` — Builds Concordance DAT and OPT load files with Bates ranges, delimiter conventions, and metadata fields for Relativity or similar review platforms.
+- `legal-citation-formatter` — Formats case and statute citations to Bluebook or OSCOLA rules with correct signals, pincites, and short forms, flagging authorities counsel must verify.
+- `lti-launch-integrator` — Wires LTI 1.3 OIDC launches, JWT role claims, Deep Linking, and grade passback through Assignment and Grade Services against an LMS.
+- `assessment-item-designer` — Designs multiple-choice items for question banks with plausible distractors, Bloom's-aligned stems, and rationales, screening for cueing flaws that inflate scores.
+- `open-data-catalog-publisher` — Publishes dataset metadata as DCAT and data.json entries with license, spatial, and update-frequency fields that CKAN and federal harvesters require.
+- `vpat-conformance-drafter` — Drafts VPAT conformance reports for procurement bids, mapping tested results onto Section 508 and EN 301 549 criteria and flagging untested claims.
+- `interval-meter-normalizer` — Normalizes Green Button and SCADA interval data into billing determinants, handling DST gaps, kW versus kWh, and time-of-use demand windows.
+- `ghg-inventory-builder` — Builds Scope 1, 2, and 3 inventories under the GHG Protocol, setting control boundaries and separating location-based from market-based Scope 2 reporting.

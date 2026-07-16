@@ -1,0 +1,42 @@
+## Frontend & Web UI
+
+- `rsc-boundary-planner` — Draws the server/client boundary in React Server Components when a tree mixes data access with interactivity, checking prop serializability and leaf placement.
+- `hydration-mismatch-debugger` — Traces SSR hydration mismatches to dates, locales, randomness, or browser-only globals by diffing server markup against the first client render.
+- `streaming-suspense-planner` — Places Suspense boundaries for streaming SSR when a route waterfalls on slow data, staging shell markup, flush order, and selective hydration.
+- `astro-island-strategist` — Assigns Astro `client:load`, `client:idle`, `client:visible`, and `client:only` directives per island when a page mixes static content with widgets.
+- `isr-revalidation-planner` — Plans Next.js incremental static regeneration when content outpaces builds, choosing revalidate windows, cache tags, on-demand invalidation, and stale-while-revalidate fallbacks.
+- `qwik-resumability-auditor` — Audits Qwik components for resumability breaks such as unserializable closure captures, missing `$` boundaries, and eager imports that force hydration.
+- `next-app-router-migrator` — Moves Next.js Pages Router routes to the App Router, porting `getServerSideProps`, `_app` layouts, API routes, metadata, and middleware in dependency order.
+- `sveltekit-load-designer` — Chooses between SvelteKit universal and server `load` functions, wiring parent data, `depends` keys, invalidation, and streamed promises for each route.
+- `svelte-runes-migrator` — Converts Svelte stores, reactive statements, and `export let` props onto runes, mapping each to `$state`, `$derived`, `$effect`, or `$props`.
+- `nuxt-data-fetch-selector` — Picks between Nuxt `useFetch`, `useAsyncData`, and `$fetch` per call site, fixing duplicate requests, payload hydration, and unstable cache keys.
+- `vue-composition-migrator` — Ports Vue Options API components to Composition API with `<script setup>`, converting mixins, filters, event buses, and `v-model` contracts.
+- `solid-reactivity-debugger` — Finds lost SolidJS reactivity from destructured props, early signal reads, and untracked effects, then restores tracking without adding wrapper components.
+- `angular-signals-migrator` — Migrates Angular RxJS-based components to signals and standalone bootstrapping, replacing NgModules, async pipes, and zone-triggered change detection step by step.
+- `remix-route-module-designer` — Structures Remix and React Router route modules: nested layouts, loaders, actions, deferred data, and error boundaries that survive partial failures.
+- `htmx-swap-designer` — Defines an htmx contract of `hx-target`, `hx-swap`, out-of-band fragments, and `hx-boost` history so server templates stay the single source of truth.
+- `custom-element-interop-bridger` — Wraps custom elements for React, Vue, or Svelte, mapping attributes versus properties, custom events, refs, and SSR fallbacks for undefined elements.
+- `shadow-dom-style-planner` — Plans shadow DOM styling for Lit or vanilla custom elements using `:host`, `::part`, `::slotted`, adopted stylesheets, and custom properties that pierce.
+- `server-state-cache-tuner` — Tunes TanStack Query or SWR cache keys, `staleTime`, and invalidation so refetches stop thrashing and mutations settle the right queries.
+- `client-server-state-mapper` — Classifies each piece of UI state as server cache, client store, URL, or form state, then deletes stores mirroring server data.
+- `store-tearing-auditor` — Audits external stores (Zustand, Redux, custom emitters) for concurrent-rendering tearing, verifying `useSyncExternalStore` subscriptions and stable snapshot identity.
+- `url-search-state-mapper` — Moves filters, sort, pagination, and tabs into typed URL search params with parsers, defaults, and history modes that survive back navigation.
+- `form-state-machine-designer` — Models form state explicitly in React Hook Form or TanStack Form: validation timing, dirty tracking, async checks, field arrays, and submit errors.
+- `progressive-form-enhancer` — Builds forms that submit without JavaScript first, then layers enhancement via SvelteKit form actions, Next server actions, or htmx swaps.
+- `optimistic-ui-designer` — Applies optimistic mutations via `useOptimistic` or TanStack Query with snapshot, rollback, and reconciliation rules for actions rendered before server confirmation.
+- `scroll-restoration-fixer` — Restores scroll position across client-side back and forward navigation, handling nested scroll containers, late-loading content, and router-managed history entries.
+- `cascade-layers-architect` — Orders CSS with `@layer` (reset, base, components, utilities, overrides) so third-party styles and utility classes stop fighting specificity with `!important`.
+- `container-query-converter` — Replaces viewport media queries with container queries, declaring containment contexts, container units, and fallbacks so components respond to their own slot.
+- `tailwind-convention-linter` — Enforces Tailwind or UnoCSS house rules: class order, arbitrary-value budget, `@apply` policy, variant naming, and safelist entries for dynamic classes.
+- `css-runtime-migrator` — Migrates styled-components or Emotion runtime CSS to vanilla-extract, Panda, or Tailwind when a codebase adopts React Server Components, porting themes and dynamic props.
+- `stacking-context-debugger` — Diagnoses z-index failures by mapping stacking contexts created by `transform`, `filter`, `opacity`, `will-change`, containment, and position, then proposes minimal fixes.
+- `top-layer-overlay-builder` — Rebuilds modals, dropdowns, and tooltips on native `<dialog>`, the Popover API, and CSS anchor positioning, with fallbacks for unsupported browsers.
+- `list-virtualization-builder` — Virtualizes long lists and grids with TanStack Virtual, handling dynamic row heights, sticky headers, scroll anchoring, and remeasurement after data changes.
+- `drag-drop-surface-builder` — Builds drag-and-drop with dnd-kit or the native HTML drag API, defining sensors, drop targets, collision detection, autoscroll, and reorder persistence.
+- `rich-text-editor-integrator` — Integrates TipTap, ProseMirror, or Lexical: document schema, paste sanitization, serialization to storage format, custom nodes, and controlled React interop.
+- `canvas-render-loop-builder` — Scaffolds canvas and WebGL surfaces with device-pixel-ratio scaling, ResizeObserver sizing, `requestAnimationFrame` loops, context-loss recovery, and teardown on unmount.
+- `view-transition-choreographer` — Wires View Transitions for same-document router swaps and cross-document navigation, naming transition elements and gating animation behind capability checks.
+- `service-worker-strategist` — Chooses service worker caching strategies per route and asset with Workbox, planning precache manifests, update prompts, and safe unregistration paths.
+- `browser-storage-strategist` — Picks localStorage, IndexedDB, Cache API, or cookies per dataset, accounting for quota, eviction, sync versus async access, and server-render safety.
+- `component-port-planner` — Ports components between React, Svelte, Vue, and Solid by mapping lifecycle, reactivity, slots, and context idioms before rewriting any markup.
+- `compound-component-designer` — Designs component APIs: controlled versus uncontrolled state, compound children sharing context, polymorphic `as` props, and slot contracts that stay type-safe.

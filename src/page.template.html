@@ -1,0 +1,654 @@
+<title>Claude Skills — A Catalog of 1000</title>
+<style>
+  :root {
+    --paper:    #e8eae5;
+    --surface:  #f3f4f0;
+    --raised:   #fbfbf8;
+    --ink:      #171a15;
+    --ink-soft: #5e6359;
+    --ink-faint:#8a8f82;
+    --rule:     #cfd2c6;
+    --rule-soft:#dfe1d8;
+    --g-eng:    #5c6b0f;
+    --g-ai:     #1b5e70;
+    --g-biz:    #6e4a18;
+    --accent:   var(--g-eng);
+    --mark:     #d9e07a;
+    --shadow:   0 1px 2px rgba(23, 26, 21, .06), 0 8px 24px -12px rgba(23, 26, 21, .18);
+
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", "Roboto Mono", Menlo, Consolas, monospace;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+
+    --step--1: 0.78rem;
+    --step-0:  0.9rem;
+    --step-1:  1.05rem;
+    --step-2:  1.35rem;
+    --step-3:  clamp(1.7rem, 1.2rem + 1.8vw, 2.5rem);
+
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper:    #141613;
+      --surface:  #1b1e18;
+      --raised:   #22261e;
+      --ink:      #e8eae3;
+      --ink-soft: #9aa093;
+      --ink-faint:#6b7165;
+      --rule:     #2f342a;
+      --rule-soft:#262a21;
+      --g-eng:    #a8bc2e;
+      --g-ai:     #4fa8c0;
+      --g-biz:    #c99a4a;
+      --mark:     #5c6b0f;
+      --shadow:   0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .7);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:    #141613;
+    --surface:  #1b1e18;
+    --raised:   #22261e;
+    --ink:      #e8eae3;
+    --ink-soft: #9aa093;
+    --ink-faint:#6b7165;
+    --rule:     #2f342a;
+    --rule-soft:#262a21;
+    --g-eng:    #a8bc2e;
+    --g-ai:     #4fa8c0;
+    --g-biz:    #c99a4a;
+    --mark:     #5c6b0f;
+    --shadow:   0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px -12px rgba(0, 0, 0, .7);
+  }
+
+  :root[data-theme="light"] {
+    --paper:    #e8eae5;
+    --surface:  #f3f4f0;
+    --raised:   #fbfbf8;
+    --ink:      #171a15;
+    --ink-soft: #5e6359;
+    --ink-faint:#8a8f82;
+    --rule:     #cfd2c6;
+    --rule-soft:#dfe1d8;
+    --g-eng:    #5c6b0f;
+    --g-ai:     #1b5e70;
+    --g-biz:    #6e4a18;
+    --mark:     #d9e07a;
+    --shadow:   0 1px 2px rgba(23, 26, 21, .06), 0 8px 24px -12px rgba(23, 26, 21, .18);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: var(--step-0);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+
+  /* ---------------------------------------------------------------- masthead */
+
+  .masthead { padding: clamp(40px, 7vw, 80px) 0 28px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 14px;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-size: var(--step-3);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -.012em;
+    text-wrap: balance;
+    margin: 0 0 16px;
+  }
+
+  h1 em { font-style: italic; color: var(--ink-soft); }
+
+  .lede {
+    max-width: 62ch;
+    color: var(--ink-soft);
+    font-size: var(--step-1);
+    margin: 0 0 24px;
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--g-biz);
+    background: var(--surface);
+    padding: 9px 14px;
+    color: var(--ink-soft);
+  }
+
+  .status b { color: var(--ink); font-weight: 600; }
+
+  /* -------------------------------------------------------------- taxonomy */
+
+  .tax-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+    margin: 44px 0 20px;
+  }
+
+  .tax-head h2 {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .tax-legend { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  .tax-legend span {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .tax-legend i {
+    width: 9px; height: 9px;
+    border-radius: 2px;
+    background: var(--dot);
+    display: inline-block;
+  }
+
+  .taxonomy {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+    gap: 1px;
+    background: var(--rule-soft);
+    border: 1px solid var(--rule-soft);
+  }
+
+  .tile {
+    background: var(--surface);
+    border: 0;
+    padding: 12px 13px 11px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font: inherit;
+    color: inherit;
+    transition: background .12s ease;
+  }
+
+  .tile:hover, .tile:focus-visible { background: var(--raised); }
+  .tile:focus-visible { outline: 2px solid var(--tint); outline-offset: -2px; }
+
+  .tile-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .tile-num {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--tint);
+    letter-spacing: .04em;
+  }
+
+  .tile-n {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tile-name {
+    font-size: var(--step-0);
+    line-height: 1.28;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .tile-bar { height: 3px; background: var(--rule); position: relative; }
+
+  .tile-bar i {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: var(--pct);
+    background: var(--tint);
+    display: block;
+  }
+
+  /* ----------------------------------------------------------------- controls */
+
+  .controls {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 44px;
+    padding: 12px 0;
+  }
+
+  .controls-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .search {
+    flex: 1 1 260px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 0 11px;
+    height: 38px;
+  }
+
+  .search:focus-within { border-color: var(--g-eng); }
+
+  .search svg { flex: none; color: var(--ink-faint); }
+
+  .search input {
+    flex: 1;
+    border: 0;
+    background: none;
+    font-family: var(--mono);
+    font-size: var(--step-0);
+    color: var(--ink);
+    height: 100%;
+    min-width: 0;
+  }
+
+  .search input:focus { outline: none; }
+  .search input::placeholder { color: var(--ink-faint); }
+
+  .search kbd {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 1px 5px;
+  }
+
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  .chip {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    letter-spacing: .03em;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    color: var(--ink-soft);
+    padding: 0 11px;
+    height: 38px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: color .12s, border-color .12s, background .12s;
+  }
+
+  .chip i {
+    width: 8px; height: 8px;
+    border-radius: 2px;
+    background: var(--dot, var(--ink-faint));
+  }
+
+  .chip:hover { color: var(--ink); }
+  .chip[aria-pressed="true"] { background: var(--raised); border-color: var(--dot, var(--ink)); color: var(--ink); }
+  .chip:focus-visible { outline: 2px solid var(--dot, var(--ink)); outline-offset: 2px; }
+
+  .tally {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    margin-left: auto;
+  }
+
+  .tally b { color: var(--ink); font-weight: 600; }
+
+  /* ------------------------------------------------------------------- list */
+
+  .group-rule {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 52px 0 0;
+    padding-bottom: 9px;
+    border-bottom: 2px solid var(--tint);
+  }
+
+  .group-rule h2 {
+    font-family: var(--serif);
+    font-size: var(--step-2);
+    font-weight: 600;
+    letter-spacing: -.008em;
+    margin: 0;
+  }
+
+  .group-rule p {
+    margin: 0;
+    color: var(--ink-faint);
+    font-size: var(--step--1);
+    font-family: var(--mono);
+  }
+
+  .cat { scroll-margin-top: 70px; }
+
+  .cat-head {
+    position: sticky;
+    top: 62px;
+    z-index: 10;
+    background: var(--paper);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 20px 0 8px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .cat-num {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    font-weight: 600;
+    color: var(--tint);
+  }
+
+  .cat-head h3 {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .cat-count {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+    margin-left: auto;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .rows { display: flex; flex-direction: column; }
+
+  .row {
+    display: grid;
+    grid-template-columns: minmax(210px, 264px) 1fr;
+    gap: 4px 22px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+
+  .row:hover { background: var(--surface); }
+
+  .slug {
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--tint);
+    word-break: break-word;
+    line-height: 1.5;
+  }
+
+  .desc { color: var(--ink-soft); max-width: 76ch; }
+
+  mark {
+    background: var(--mark);
+    color: var(--ink);
+    padding: 0 1px;
+    border-radius: 2px;
+  }
+
+  .empty {
+    display: none;
+    padding: 64px 0;
+    text-align: center;
+    color: var(--ink-soft);
+  }
+
+  .empty p { margin: 0 0 6px; font-size: var(--step-1); }
+  .empty span { font-family: var(--mono); font-size: var(--step--1); color: var(--ink-faint); }
+
+  .is-empty .empty { display: block; }
+
+  footer {
+    margin-top: 72px;
+    padding: 28px 0 56px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    color: var(--ink-faint);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  [hidden] { display: none !important; }
+
+  @media (max-width: 640px) {
+    .row { grid-template-columns: 1fr; gap: 3px; }
+    .cat-head { top: 58px; }
+    .tally { margin-left: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+
+  html { scroll-behavior: smooth; }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">Proposal · 35 categories · 1000 entries</p>
+    <h1>Claude Skills<br><em>A catalog of 1000.</em></h1>
+    <p class="lede">
+      Every entry is a candidate skill — a name and one sentence saying what it does and when
+      Claude should reach for it. Nothing here is built yet. This page exists to be argued with.
+    </p>
+    <p class="status"><b>Catalog only.</b> Specifications, not implementations.</p>
+  </header>
+
+  <section aria-labelledby="tax-title">
+    <div class="tax-head">
+      <h2 id="tax-title">The taxonomy</h2>
+      <div class="tax-legend" id="legend"></div>
+    </div>
+    <div class="taxonomy" id="taxonomy"></div>
+  </section>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <label class="search">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.6"></circle>
+          <path d="M10.5 10.5 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+        </svg>
+        <input id="q" type="search" placeholder="Filter 1000 skills by name or description…" autocomplete="off" aria-label="Filter skills">
+        <kbd>/</kbd>
+      </label>
+      <div class="chips" id="chips"></div>
+      <p class="tally" id="tally"></p>
+    </div>
+  </div>
+
+  <main id="list"></main>
+
+  <div class="empty" id="empty">
+    <p>No skill matches that.</p>
+    <span>Try a broader term, or clear the group filter.</span>
+  </div>
+
+  <footer>
+    <span>1000 skills · 35 categories · Apache-2.0</span>
+    <span>Press <kbd>/</kbd> to search · <kbd>Esc</kbd> to clear</span>
+  </footer>
+</div>
+
+<script>
+  const DATA = /*__DATA__*/;
+
+  const TINTS = { engineering: 'var(--g-eng)', 'ai-data': 'var(--g-ai)', 'product-business': 'var(--g-biz)' };
+  const SHORT = { engineering: 'Engineering', 'ai-data': 'AI & Data', 'product-business': 'Product & Business' };
+
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  const maxCount = Math.max(...DATA.groups.flatMap((g) => g.categories.map((c) => c.entries.length)));
+
+  /* ---- legend ---- */
+  document.getElementById('legend').innerHTML = DATA.groups.map((g) => {
+    const n = g.categories.reduce((s, c) => s + c.entries.length, 0);
+    return `<span style="--dot:${TINTS[g.id]}"><i></i>${esc(SHORT[g.id])} ${n}</span>`;
+  }).join('');
+
+  /* ---- taxonomy tiles ---- */
+  document.getElementById('taxonomy').innerHTML = DATA.groups.flatMap((g) =>
+    g.categories.map((c) => `
+      <button class="tile" style="--tint:${TINTS[g.id]}" data-jump="cat-${c.num}">
+        <span class="tile-top">
+          <span class="tile-num">${c.num}</span>
+          <span class="tile-n">${c.entries.length}</span>
+        </span>
+        <span class="tile-name">${esc(c.name)}</span>
+        <span class="tile-bar" style="--pct:${(c.entries.length / maxCount * 100).toFixed(1)}%"><i></i></span>
+      </button>`)
+  ).join('');
+
+  /* ---- filter chips ---- */
+  document.getElementById('chips').innerHTML = DATA.groups.map((g) =>
+    `<button class="chip" style="--dot:${TINTS[g.id]}" data-group="${g.id}" aria-pressed="false"><i></i>${esc(SHORT[g.id])}</button>`
+  ).join('');
+
+  /* ---- list ---- */
+  document.getElementById('list').innerHTML = DATA.groups.map((g) => `
+    <section data-group="${g.id}" style="--tint:${TINTS[g.id]}">
+      <div class="group-rule">
+        <h2>${esc(g.name)}</h2>
+        <p>${g.categories.reduce((s, c) => s + c.entries.length, 0)} skills</p>
+      </div>
+      ${g.categories.map((c) => `
+        <section class="cat" id="cat-${c.num}" data-cat>
+          <div class="cat-head">
+            <span class="cat-num">${c.num}</span>
+            <h3>${esc(c.name)}</h3>
+            <span class="cat-count" data-count>${c.entries.length}</span>
+          </div>
+          <div class="rows">
+            ${c.entries.map((e) => `
+              <div class="row" data-row data-slug="${esc(e.slug)}" data-desc="${esc(e.desc)}">
+                <code class="slug">${esc(e.slug)}</code>
+                <p class="desc">${esc(e.desc)}</p>
+              </div>`).join('')}
+          </div>
+        </section>`).join('')}
+    </section>`).join('');
+
+  /* ---- filtering ---- */
+  const rows = [...document.querySelectorAll('[data-row]')];
+  const cats = [...document.querySelectorAll('[data-cat]')];
+  const groupSections = [...document.querySelectorAll('#list > section')];
+  const tally = document.getElementById('tally');
+  const input = document.getElementById('q');
+  let group = null;
+
+  const hl = (text, q) => {
+    if (!q) return esc(text);
+    const i = text.toLowerCase().indexOf(q);
+    if (i < 0) return esc(text);
+    return esc(text.slice(0, i)) + '<mark>' + esc(text.slice(i, i + q.length)) + '</mark>' + hl(text.slice(i + q.length), q);
+  };
+
+  function apply() {
+    const q = input.value.trim().toLowerCase();
+    let shown = 0;
+
+    for (const row of rows) {
+      const inGroup = !group || row.closest('[data-group]').dataset.group === group;
+      const slug = row.dataset.slug;
+      const desc = row.dataset.desc;
+      const hit = !q || slug.toLowerCase().includes(q) || desc.toLowerCase().includes(q);
+      const show = inGroup && hit;
+      row.hidden = !show;
+      if (show) {
+        shown++;
+        row.children[0].innerHTML = hl(slug, q);
+        row.children[1].innerHTML = hl(desc, q);
+      }
+    }
+
+    for (const cat of cats) {
+      const n = cat.querySelectorAll('[data-row]:not([hidden])').length;
+      cat.hidden = n === 0;
+      cat.querySelector('[data-count]').textContent = n;
+    }
+    for (const sec of groupSections) {
+      sec.hidden = sec.querySelectorAll('[data-cat]:not([hidden])').length === 0;
+    }
+
+    document.body.classList.toggle('is-empty', shown === 0);
+    tally.innerHTML = shown === DATA.total
+      ? `<b>${DATA.total}</b> skills`
+      : `<b>${shown}</b> of ${DATA.total}`;
+  }
+
+  input.addEventListener('input', apply);
+
+  document.getElementById('chips').addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-group]');
+    if (!btn) return;
+    group = group === btn.dataset.group ? null : btn.dataset.group;
+    for (const c of document.querySelectorAll('.chip')) {
+      c.setAttribute('aria-pressed', String(c.dataset.group === group));
+    }
+    apply();
+  });
+
+  document.getElementById('taxonomy').addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-jump]');
+    if (!btn) return;
+    const target = document.getElementById(btn.dataset.jump);
+    if (target.hidden) { input.value = ''; group = null; document.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', 'false')); apply(); }
+    target.scrollIntoView({ block: 'start' });
+  });
+
+  addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); input.select(); }
+    if (e.key === 'Escape' && document.activeElement === input) { input.value = ''; apply(); input.blur(); }
+  });
+
+  apply();
+</script>

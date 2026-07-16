@@ -1,0 +1,42 @@
+## DevOps, CI/CD & Release
+
+- `dockerfile-layer-slimmer` — Restructures Dockerfiles into multi-stage builds with distroless or slim bases, cutting image size when builds ship compilers and dev dependencies.
+- `docker-build-cache-tuner` — Configures BuildKit cache mounts and registry cache backends so CI rebuilds hit warm layers instead of recompiling every dependency.
+- `buildx-multiarch-publisher` — Builds and pushes arm64 plus amd64 manifest lists with docker buildx, choosing native runners over QEMU emulation when build times spike.
+- `container-image-tagger` — Establishes immutable tag and digest conventions across registries, replacing floating latest tags when deployments must pin exactly what was tested.
+- `registry-retention-pruner` — Codifies garbage-collection and retention rules for image registries, reclaiming storage when untagged layers and stale build tags accumulate unbounded.
+- `container-signal-drainer` — Fixes PID 1 signal handling, preStop hooks, and shutdown timeouts so rolling deploys drain connections instead of dropping in-flight requests.
+- `ci-cache-key-designer` — Designs cache keys, restore-keys, and scope boundaries for GitHub Actions or GitLab CI when cache hit rates collapse across branches.
+- `ci-matrix-build-planner` — Trims build matrices using include, exclude, and fail-fast semantics, invoked when every runtime and OS pair triggers combinatorial job explosion.
+- `self-hosted-runner-operator` — Provisions and autoscales self-hosted CI runners with ephemeral workspaces and labels, replacing hosted minutes when jobs need GPUs or private networks.
+- `reusable-workflow-refactorer` — Extracts duplicated CI steps into composite actions or reusable workflows with typed inputs, invoked when pipeline YAML repeats across many repositories.
+- `ci-test-gate-designer` — Classifies which checks block merges versus report advisory results, applied when required status checks either wave regressions through or stall delivery.
+- `gitlab-pipeline-dag-optimizer` — Rewires GitLab CI stages into needs-based DAGs with rules and parent-child pipelines, shortening wall-clock time when stages serialize unnecessarily.
+- `monorepo-affected-builder` — Wires Nx or Turborepo affected graphs into CI so only packages touched by a diff rebuild and retest.
+- `terraform-state-surgeon` — Performs state mv, import, and rm operations plus backend migrations, used when refactored resources would otherwise be destroyed and recreated.
+- `terraform-drift-reconciler` — Detects infrastructure drift with scheduled plan runs and decides whether to import, revert, or codify changes made outside Terraform.
+- `terraform-plan-reviewer` — Reads terraform plan output to flag forced replacements, destroys, and unknown-after-apply values before an apply reaches production infrastructure.
+- `pulumi-stack-migrator` — Ports Terraform configurations or restructures Pulumi stacks with aliases and stack references, keeping resource URNs stable during ownership changes.
+- `helm-release-upgrader` — Runs helm upgrade with atomic, wait, and timeout flags, and recovers releases stuck in pending-upgrade after a failed hook.
+- `kustomize-overlay-organizer` — Structures Kustomize bases and per-environment overlays with strategic merge patches, invoked when copied manifests drift between staging and production.
+- `k8s-probe-configurator` — Sets liveness, readiness, and startup probe fields with correct thresholds, called when slow-booting pods get killed or receive traffic early.
+- `k8s-resource-limit-tuner` — Derives CPU and memory requests and limits from observed usage, fixing OOMKills, CPU throttling, and unstable Guaranteed or Burstable QoS classes.
+- `hpa-scaling-planner` — Picks HPA or KEDA metrics, target values, and stabilization windows, applied when autoscalers flap or fail to absorb traffic spikes.
+- `pod-disruption-budgeter` — Writes PodDisruptionBudgets and topology spread rules so node drains and cluster upgrades never evict every replica of a service.
+- `argocd-applicationset-designer` — Generates ArgoCD ApplicationSets with cluster and git generators, replacing hand-copied Application manifests when environments or tenants multiply.
+- `argocd-sync-wave-orderer` — Orders ArgoCD sync waves, hooks, and prune settings so dependencies apply before dependents and self-heal does not fight controllers.
+- `blue-green-cutover-planner` — Stages blue-green cutovers across warm-up, traffic switch, session drain, and green-to-blue fallback, used when rollback must complete in seconds.
+- `canary-rollout-designer` — Defines canary steps, traffic weights, and automated analysis gates for Argo Rollouts or Flagger, aborting promotion when error budgets burn.
+- `rolling-update-tuner` — Computes maxSurge, maxUnavailable, and progressDeadlineSeconds against replica counts and quotas, called when rolling deploys stall or halve capacity mid-flight.
+- `migration-deploy-sequencer` — Sequences expand-and-contract schema phases across releases so old and new pod versions safely share one database during a rollout.
+- `deploy-smoke-gater` — Executes post-deploy smoke checks against the new revision and fails the pipeline before traffic shifts when critical paths return errors.
+- `feature-flag-rollout-planner` — Plans percentage ramps, targeting rules, and kill switches in LaunchDarkly or OpenFeature, separating release toggles from experiment and ops flags.
+- `feature-flag-debt-auditor` — Finds permanently-on flags and dead branches behind them, then orders removal PRs when flag counts outlive their rollout window.
+- `rollback-decision-triager` — Decides between rollback, fix-forward, and flag-off during a bad deploy, weighing migration reversibility, blast radius, and time since release.
+- `semantic-release-configurator` — Automates version bumps, tags, and changelog generation from conventional commits using semantic-release or Changesets across single and multi-package repositories.
+- `artifact-digest-promoter` — Promotes one built artifact by digest through dev, staging, and production without rebuilding, invoked when each environment currently compiles its own image.
+- `deploy-runbook-writer` — Drafts deploy runbooks with preflight checks, exact commands, verification steps, rollback triggers, and owner escalation for a specific service release.
+- `oncall-handoff-writer` — Produces shift handoff notes covering in-flight deploys, active freezes, degraded services, and open follow-ups when on-call rotation changes hands.
+- `preview-environment-builder` — Spins up ephemeral per-pull-request environments with seeded data and unique URLs, then tears them down and reclaims resources on merge.
+- `env-parity-auditor` — Diffs staging against production configuration, image digests, replica counts, and resource limits, run before releases that staging failed to catch.
+- `runtime-secret-delivery-mapper` — Maps secrets from Vault or cloud stores into pods via External Secrets, CSI driver, or sealed secrets without baking values into images.

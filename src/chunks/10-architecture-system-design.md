@@ -1,0 +1,37 @@
+## Architecture & System Design
+
+- `architecture-problem-framer` — Converts an open technical argument into a decision brief naming constraints, quality attributes, non-goals, assumptions, and reversibility before options appear.
+- `tradeoff-matrix-builder` — Scores competing designs against weighted quality attributes with explicit disqualifiers, then runs a sensitivity check so the winner is not weight-tuning.
+- `build-buy-evaluator` — Compares building, buying, and adopting open source using total cost, exit cost, and whether the capability is a real differentiator.
+- `greenfield-stack-selector` — Picks a language, framework, and datastore for a new service from team skills, load shape, and operational budget rather than familiarity.
+- `tech-radar-curator` — Maintains an adopt/trial/assess/hold technology radar with entry criteria, blip movement rules, and a quarterly review that retires dead entries.
+- `adr-record-drafter` — Captures an architecture decision as a MADR record with context, considered options, consequences, and a status field that tracks supersession.
+- `adr-review-auditor` — Reviews a proposed ADR for unexamined options, missing consequences, unstated assumptions, and decisions the record claims but never actually makes.
+- `rfc-process-designer` — Establishes an RFC lifecycle with author, reviewer, and approver roles, comment deadlines, and a rule for when an RFC is required.
+- `design-review-facilitator` — Runs an architecture design review with a pre-read, timeboxed agenda, named challenge roles, and a written decision captured before anyone leaves.
+- `decision-revisit-planner` — Re-opens architecture decisions whose stated assumptions expired, drafts the superseding record, and sequences the unwind work each reversal actually costs.
+- `bounded-context-mapper` — Draws a DDD context map naming each relationship as shared kernel, conformist, anticorruption layer, open host service, or separate ways.
+- `event-storming-facilitator` — Facilitates a big-picture or design-level event storming session with sticky color conventions, hotspot capture, and a pivot to candidate aggregates.
+- `aggregate-boundary-designer` — Sizes DDD aggregates so one transaction touches one aggregate, invariants stay inside, and cross-aggregate consistency moves to domain events.
+- `service-boundary-analyzer` — Grades proposed service seams using git co-change history, call-graph coupling, and data ownership to expose boundaries that will leak chatter.
+- `microservice-split-arbiter` — Decides whether a workload warrants separate services by testing independent deployability, divergent scaling, team ownership, and the failure modes distribution adds.
+- `monolith-decomposition-planner` — Sequences a monolith breakup by extracting the highest-churn, lowest-coupling seam first and defining the data ownership move each step requires.
+- `strangler-fig-migrator` — Plans a strangler migration with a routing facade, per-route cutover gates, dual-run verification, and a rollback path that survives partial traffic.
+- `deprecation-runway-planner` — Schedules retirement of a system or capability with consumer inventory, migration runway, sunset dates, brownout drills, and enforced removal.
+- `event-driven-topology-designer` — Chooses choreography or orchestration per flow, fixes delivery semantics and ordering guarantees, and names the owner of every published event.
+- `cqrs-boundary-planner` — Judges where splitting read and write models pays, sizes projection lag budgets, and blocks CQRS on domains that never needed it.
+- `event-sourcing-modeler` — Designs an event store with stream boundaries, snapshot cadence, projection rebuild strategy, and an upcasting plan for events already written.
+- `saga-compensation-mapper` — Maps every saga step to its compensation and pivot transaction, then proves each partial failure leaves a business state someone will accept.
+- `distributed-transaction-eliminator` — Replaces proposed two-phase commit or XA with sagas, reservations, or single-writer redesign whenever atomicity is claimed across service boundaries.
+- `transactional-outbox-builder` — Removes dual writes to database and broker by building an outbox table, a relay or CDC publisher, and consumer-side deduplication.
+- `consistency-model-selector` — Assigns each read path a strong, causal, read-your-writes, or eventual consistency guarantee and states the staleness the product actually tolerates.
+- `cap-pacelc-analyzer` — Frames a datastore or replication choice with CAP and PACELC, correcting the usual claim that a system simply picks two letters.
+- `read-write-split-designer` — Routes reads to replicas with a staleness budget, session-consistency escape hatch, and lag-aware fallback so users never read behind their own writes.
+- `idempotent-workflow-hardener` — Makes a multi-service workflow safe to retry end to end with dedup keys, effect ledgers, and bounded replay windows at every hop.
+- `multi-tenancy-isolation-architect` — Selects silo, bridge, or pool tenant isolation per tier, then plans noisy-neighbor limits, tenant routing, and the migration between models.
+- `capacity-envelope-estimator` — Estimates QPS, storage, and bandwidth for a design with back-of-envelope math, Little's Law, and peak factors before any code exists.
+- `failure-mode-analyzer` — Walks each dependency through an FMEA table of failure mode, effect, detection, and mitigation, ranking by severity times likelihood times undetectability.
+- `circuit-breaker-tuner` — Sets breaker thresholds, half-open probe rates, and fallback behavior from measured downstream latency so the breaker trips before the caller starves.
+- `bulkhead-pool-partitioner` — Partitions thread pools, connections, and queues per dependency so one slow downstream cannot exhaust the capacity every other call path shares.
+- `timeout-budget-allocator` — Distributes an end-to-end latency budget across a call chain so inner timeouts stay shorter than outer ones and retries fit inside.
+- `fitness-function-builder` — Encodes architecture rules as CI tests with ArchUnit, dependency-cruiser, or Deptrac so layering and coupling limits fail the build when violated.

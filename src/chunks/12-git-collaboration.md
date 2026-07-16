@@ -1,0 +1,32 @@
+## Git & Code Collaboration
+
+- `branching-model-designer` — Compares trunk-based, GitHub Flow, and release-branch models against deploy cadence and team size, then writes the branching policy a repo adopts.
+- `rebase-todo-scripter` — Generates a git rebase todo list and drives it through GIT_SEQUENCE_EDITOR, so interactive rebases run unattended in non-interactive shells.
+- `merge-conflict-resolver` — Resolves merge conflicts by hunk with rerere caching, then rebuilds and tests to catch semantic conflicts that compile-clean markers hide.
+- `lockfile-conflict-mediator` — Regenerates package-lock.json, yarn.lock, pnpm-lock.yaml, or Cargo.lock from the merged manifest instead of hand-editing conflict markers that corrupt dependency trees.
+- `git-bisect-automator` — Wraps git bisect run with a scripted reproducer and skip rules, pinpointing the commit that introduced a regression across long ranges.
+- `git-reflog-rescuer` — Recovers commits, branches, and stashes lost to a bad reset, rebase, or amend by walking reflog and dangling objects.
+- `atomic-commit-splitter` — Splits a sprawling work-in-progress commit into reviewable atomic commits using git add --patch and rebase, each building and passing tests.
+- `conventional-commit-enforcer` — Derives a scope taxonomy from the repo tree and emits commitlint rules, so Conventional Commits stay consistent across contributors and releases.
+- `history-secret-purger` — Strips a leaked credential or stray blob from every commit with git-filter-repo or BFG, then coordinates force-push, reclone, and key rotation.
+- `subdir-history-extractor` — Extracts a subdirectory into a standalone repo with its commit history intact via git-filter-repo, preserving tags, authorship, and merge topology.
+- `repo-bloat-analyzer` — Ranks the largest blobs in packed history with rev-list and cat-file, reporting what to purge when clone times balloon.
+- `git-lfs-migrator` — Moves existing binaries into Git LFS using lfs migrate import and .gitattributes patterns, handling rewritten history, locking, and pointer-file pitfalls.
+- `sparse-checkout-configurer` — Configures cone-mode sparse checkout and partial clone filters so a huge monorepo checks out only the paths a task touches.
+- `submodule-sync-fixer` — Repairs detached or drifted submodule pointers, wiring recursive update, branch tracking, and .gitmodules URLs after a clone or bump breaks.
+- `subtree-vendoring-manager` — Vendors an upstream repo with git subtree add and pull, and splits local changes back out when contributing patches upstream.
+- `git-worktree-orchestrator` — Sets up parallel git worktrees for concurrent branches, handling per-tree dependencies, shared hooks, and pruning so stashing between contexts disappears.
+- `git-hooks-installer` — Installs shareable pre-commit, commit-msg, and pre-push hooks via husky, lefthook, or core.hooksPath, keeping them fast enough that nobody uses --no-verify.
+- `gitattributes-designer` — Writes .gitattributes rules for line-ending normalization, binary marking, diff and merge drivers, linguist overrides, and export-ignore when checkouts differ across platforms.
+- `fork-upstream-syncer` — Keeps a long-lived fork current with upstream by choosing rebase or merge per branch, and resolving recurring drift in vendored files.
+- `oss-contribution-navigator` — Walks a first upstream contribution through issue claiming, CLA or DCO sign-off, project commit conventions, and the review cadence maintainers expect.
+- `pr-description-writer` — Builds a pull request body from the commit range, covering context, risk, test plan, and linked issues before a branch opens for review.
+- `pr-stack-planner` — Breaks an oversized branch into a stacked chain of dependent pull requests with rebase order and landing sequence that reviewers can follow.
+- `diff-review-sequencer` — Orders a thousand-line diff into a reading path, separating generated files, moves, and renames from real logic changes worth scrutiny.
+- `review-comment-composer` — Phrases pull request feedback tagged blocking, non-blocking, or nit, using questions rather than commands, so review threads stay short.
+- `review-queue-triager` — Prioritizes a backlog of open pull requests by staleness, blast radius, and who is blocked, producing a review sequence for the day.
+- `codeowners-file-builder` — Assembles and audits CODEOWNERS from directory ownership, catching last-match-wins surprises, unmatched paths, and stale teams that stall review routing.
+- `hotfix-backporter` — Cherry-picks a landed fix onto active release branches with -x provenance, resolving divergence and confirming each branch still builds after.
+- `merge-revert-planner` — Reverts a merge commit with the right -m parent and plans the revert-of-the-revert, so the branch can be re-merged later without silent drops.
+- `blame-archaeologist` — Traces why a line exists using git log -S, -L, --follow, and blame-ignore-revs, surviving reformat commits and file renames along the way.
+- `release-tag-cutter` — Cuts annotated, signed semver tags with a consistent naming scheme and moves them safely when a tag lands on the wrong commit.

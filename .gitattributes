@@ -1,0 +1,9 @@
+# The build scripts parse chunks line by line and the page generator splits the
+# template on \n, so line endings must not drift per clone. Normalize to LF.
+* text=auto eol=lf
+
+# Generated — collapse in diffs and keep out of language stats.
+CATALOG.md linguist-generated=true
+index.html linguist-generated=true
+
+LICENSE linguist-vendored=true

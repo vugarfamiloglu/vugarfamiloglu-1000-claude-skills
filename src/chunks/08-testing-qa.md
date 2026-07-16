@@ -1,0 +1,42 @@
+## Testing & QA
+
+- `test-pyramid-planner` — Allocates test cases across unit, integration, and end-to-end layers by risk, and flags inverted pyramids during suite design.
+- `pairwise-combination-generator` — Reduces exponential parameter combinations to an all-pairs covering array using PICT or allpairspy when config matrices explode.
+- `test-name-standardizer` — Renames tests to a given-when-then or stated-behavior convention per framework, so a failure name alone explains the regression.
+- `exploratory-charter-designer` — Drafts timeboxed session-based test charters with mission, oracles, and coverage notes when a feature needs unscripted manual probing.
+- `tdd-cycle-driver` — Enforces red-green-refactor by proving each new test fails first, then blocking implementation edits until the failure message reads correctly.
+- `bug-repro-test-writer` — Converts a bug report into a minimal failing test that reproduces the defect before any fix touches production code.
+- `test-double-selector` — Picks between dummy, stub, spy, mock, and fake using Meszaros criteria, explaining why the chosen double fits the assertion.
+- `over-mocking-auditor` — Flags tests that mock types you do not own or stub the unit under test, then proposes real collaborators.
+- `http-stub-server-builder` — Stands up MSW, WireMock, or nock stubs and record-replay cassettes with secret redaction when tests hit third-party HTTP APIs.
+- `fixture-factory-builder` — Swaps shared fixture files for test data builders and object mothers using factory_boy or Fishery, so each test owns its setup.
+- `fake-clock-injector` — Injects controllable fake clocks via vi.useFakeTimers, freezegun, or java.time.Clock so time-dependent tests stop failing at midnight.
+- `random-seed-controller` — Pins PRNG seeds, UUID generation, and shuffle order behind an injectable source so a failing run replays byte-for-byte.
+- `db-test-isolator` — Isolates database tests with per-test transaction rollback, template databases, or truncation, choosing the strategy that survives parallel workers.
+- `testcontainers-orchestrator` — Spins up real Postgres, Kafka, or Redis per suite via Testcontainers, with container reuse and readiness waits replacing hand-rolled Docker scripts.
+- `property-invariant-designer` — Derives round-trip, idempotence, and oracle invariants from a function's contract, then encodes them as Hypothesis or fast-check properties.
+- `stateful-model-tester` — Models stateful APIs with a simplified reference implementation and command generators so property tests shrink failing call sequences automatically.
+- `fuzz-harness-builder` — Builds a libFuzzer, cargo-fuzz, Atheris, or go test fuzz entry point with structured input decoding and a seed corpus.
+- `mutation-score-analyzer` — Runs Stryker, PIT, mutmut, or cargo-mutants, then triages surviving mutants into missing assertions versus equivalent mutants worth ignoring.
+- `consumer-contract-writer` — Writes consumer-driven Pact tests that record only the fields the client reads, publishing pacts to a broker on green.
+- `provider-contract-verifier` — Verifies a provider against broker pacts with state handlers and gates deploys through can-i-deploy when services release independently.
+- `openapi-conformance-validator` — Generates schema-driven request tests from an OpenAPI document with Schemathesis or Dredd, catching responses that drift from the spec.
+- `snapshot-test-curator` — Prunes obsolete and oversized snapshots, enforces CI mode against silent rewrites, and rejects diffs no reviewer can actually read.
+- `golden-file-approver` — Sets up approval tests with committed golden files and an explicit update flag, for outputs too large to assert inline.
+- `visual-regression-harness` — Configures pixel-diff suites in Playwright or Chromatic with animation freezing, font pinning, and dynamic-region masking to stop baseline churn.
+- `flaky-test-quarantiner` — Detects reruns that flip results, moves offenders to a quarantined lane with an expiry date and owner, and reports leakage.
+- `flake-root-cause-tracer` — Classifies a flaky failure into async leak, shared state, timing, or resource contention, then names the fix for that class.
+- `test-pollution-bisector` — Bisects a randomized test order to find the test that leaks state into a later failure, isolating the polluting pair.
+- `coverage-gap-prioritizer` — Ranks uncovered branches by change frequency, blast radius, and diff coverage, so effort goes where a bug would actually hurt.
+- `coverage-gaming-detector` — Finds assertion-free tests, unchecked mocks, and exercise-only paths that inflate coverage percentages when the number rises but bugs escape.
+- `legacy-seam-introducer` — Introduces object, link, and preprocessing seams via sprout or wrap methods so untestable legacy code accepts a test double.
+- `characterization-test-writer` — Captures current legacy behavior, bugs included, by asserting observed output before a refactor, using coverage to find unexercised branches.
+- `test-suite-accelerator` — Profiles the slowest tests, then shards, parallelizes, and trims setup to cut wall-clock runtime without deleting behavioral coverage.
+- `obsolete-test-pruner` — Deletes tests for removed features, duplicate cases, and change-detector assertions, proving with mutation score that protection survives the cut.
+- `playwright-locator-hardener` — Replaces brittle CSS and XPath selectors with role-based locators and web-first assertions, deleting every hard-coded sleep from the spec.
+- `pytest-fixture-architect` — Structures conftest layering, fixture scopes, and indirect parametrize so pytest setup stays explicit instead of collapsing into implicit fixture soup.
+- `spring-slice-test-designer` — Chooses between @WebMvcTest, @DataJpaTest, and full @SpringBootTest, keeping JUnit context caching effective when suite startup dominates the runtime.
+- `go-table-test-writer` — Writes table-driven Go subtests with t.Parallel, t.Cleanup, and cmp.Diff, avoiding loop-variable capture, shared fixtures, and require-versus-assert mistakes.
+- `cypress-to-playwright-migrator` — Ports Cypress specs to Playwright, mapping chained retry-ability onto async web-first assertions and rewriting cy.intercept stubs as route handlers.
+- `a11y-ci-gate-builder` — Wires axe-core through jest-axe or Playwright into CI with a violation baseline, failing builds on new accessibility regressions only.
+- `defect-escape-analyzer` — Traces each production bug back to the test layer that should have caught it, then adds that case and reports escape trends.

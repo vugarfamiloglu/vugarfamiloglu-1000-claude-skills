@@ -1,0 +1,37 @@
+## Machine Learning & Data Science
+
+- `feature-leakage-auditor` — Traces each feature back to its source timestamp, flags target leakage and look-ahead bias, and blocks offending columns before training.
+- `categorical-encoding-selector` — Chooses between one-hot, target, and ordinal encoding by cardinality and model family, fitting target encoders inside cross-validation folds.
+- `cv-split-designer` — Chooses grouped, stratified, or time-ordered cross-validation from the data's leakage structure and emits the matching scikit-learn splitter code.
+- `imbalanced-data-strategist` — Compares class weighting, threshold moving, and resampling for rare-event targets, then picks one and states its calibration cost.
+- `sklearn-pipeline-refactorer` — Converts ad-hoc preprocessing into a scikit-learn ColumnTransformer pipeline so scalers and encoders fit only on training folds.
+- `gradient-boosting-tuner` — Tunes XGBoost and LightGBM in a fixed order of depth, regularization, then learning rate, using early stopping on holdout.
+- `hyperparameter-search-planner` — Sizes the search budget, picks random, Optuna TPE, or Hyperband, and defines log-scale ranges with early-stopping pruners.
+- `pytorch-training-loop-auditor` — Checks a PyTorch loop for missing zero_grad, eval-mode leaks, undetached loss accumulation, and wrong scheduler stepping order.
+- `nan-loss-debugger` — Bisects NaN or exploding training loss through gradient norms, warmup schedule, fp16 overflow, and unnormalized input rows.
+- `torch-oom-resolver` — Clears CUDA out-of-memory failures during training using batch-size search, gradient accumulation, activation checkpointing, and memory-snapshot profiling.
+- `classification-metric-selector` — Picks an evaluation metric that matches the cost matrix and class prior, rejecting accuracy when base rates are heavily skewed.
+- `probability-calibration-tuner` — Diagnoses overconfident classifiers with reliability curves, applies Platt scaling or isotonic regression, and confirms the gain using Brier score.
+- `model-error-slicer` — Slices evaluation metrics by cohort to locate where a model fails, ranking segments by volume-weighted error contribution.
+- `shap-attribution-analyzer` — Selects the right SHAP explainer for the model type, computes global and local attributions, and flags misleading correlated-feature readings.
+- `model-fairness-auditor` — Measures demographic parity, equalized odds, and subgroup error gaps across protected attributes, then reports the mitigation tradeoff per threshold.
+- `notebook-to-module-refactorer` — Extracts a Jupyter notebook into tested modules with a CLI entrypoint, config file, and seeds, removing hidden cell-order state.
+- `training-run-reproducer` — Pins seeds, library versions, data hashes, and determinism flags so a training run reproduces its metrics or explains the divergence.
+- `model-registry-promoter` — Gates promotion from staging to production on signature checks, reproducible metrics, and MLflow registry stage transitions with recorded lineage.
+- `model-serving-packager` — Packages a trained model with its preprocessing, pinned versions, and input schema into a BentoML or TorchServe endpoint.
+- `train-serve-skew-detector` — Compares offline feature distributions against live serving logs, isolating skew caused by duplicated code, timing gaps, or null handling.
+- `feature-drift-detector` — Sets population stability index and KS thresholds per feature, separates covariate drift from concept drift, and wires retraining alerts.
+- `retraining-trigger-planner` — Defines retraining triggers from drift magnitude, label lag, and performance decay rather than an arbitrary fixed calendar cadence.
+- `statistical-test-selector` — Maps data shape, pairing, and distribution assumptions to the correct test, blocking t-tests on skewed or dependent samples.
+- `multiple-comparison-corrector` — Applies Bonferroni, Holm, or Benjamini-Hochberg correction across a test family and restates which findings survive the adjusted threshold.
+- `experiment-power-calculator` — Computes sample size and runtime from baseline rate, minimum detectable effect, and variance, then warns about peeking and multiple comparisons.
+- `causal-effect-estimator` — Draws the DAG, picks an identification strategy, and estimates treatment effects with propensity scores, difference-in-differences, or instrumental variables.
+- `observational-bias-checker` — Checks an observational analysis for Simpson's paradox, collider bias, survivorship filtering, and unmeasured confounding before any causal claim ships.
+- `timeseries-backtest-designer` — Builds walk-forward and expanding-window backtests with embargo gaps, blocking random shuffles that leak future values into forecast training.
+- `forecast-model-selector` — Tests stationarity and seasonality, then chooses among ETS, ARIMA, Prophet, and gradient boosting against a seasonal naive baseline.
+- `recsys-evaluation-harness` — Evaluates recommenders with leave-one-last-item splits, NDCG and recall at k, plus coverage and popularity-bias diagnostics per segment.
+- `recsys-cold-start-planner` — Designs content-based fallbacks, exploration bandits, and onboarding prompts for new users and items that lack interaction history.
+- `image-augmentation-designer` — Selects augmentations that preserve label semantics for the imaging domain, orders Albumentations transforms, and previews train-versus-serve mismatch.
+- `object-detection-evaluator` — Computes mAP across IoU sweeps, separates localization from classification errors, and surfaces the worst false-positive clusters per class.
+- `text-classifier-baseline-builder` — Builds a TF-IDF plus linear baseline with stratified evaluation before any deep model, reporting the accuracy floor to beat.
+- `topic-model-tuner` — Tunes LDA or BERTopic cluster counts using coherence scores, then labels topics and flags junk clusters formed from boilerplate.

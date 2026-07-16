@@ -1,0 +1,27 @@
+## Analytics, BI & Reporting
+
+- `event-taxonomy-designer` — Defines an object-action event naming scheme with typed properties and a versioned tracking plan before instrumentation scatters ad-hoc event names.
+- `tracking-plan-auditor` — Compares live Amplitude or Mixpanel events against the tracking plan, flagging missing properties, casing drift, and events firing twice per action.
+- `identity-stitching-planner` — Maps anonymous IDs to user IDs across devices with alias tables and merge rules so pre-signup activity survives in retention reports.
+- `metric-layer-modeler` — Encodes metrics once in dbt Semantic Layer, Cube, or LookML with dimensions, filters, and grain, so every tool returns identical numbers.
+- `metric-definition-arbiter` — Resolves competing definitions of active user, revenue, or churn into one documented spec with owner, grain, filters, and deprecation notes.
+- `north-star-metric-selector` — Picks a north-star metric and input metrics that survive gaming, tie to revenue, and move within a team's control horizon.
+- `metric-tree-decomposer` — Breaks a headline metric into a multiplicative driver tree with owned inputs, then quantifies each branch's contribution to the current movement.
+- `retention-cohort-analyzer` — Builds N-day and unbounded retention curves by signup cohort, separating true churn from reporting-window truncation before anyone declares a trend.
+- `funnel-dropoff-analyzer` — Defines funnel steps, conversion windows, and denominators, then locates drop-off segments while ruling out instrumentation gaps masquerading as user behavior.
+- `attribution-model-selector` — Compares last-touch, position-based, Markov, and Shapley attribution against holdout lift, then documents which credit model the reported numbers use.
+- `ltv-cohort-modeler` — Projects cohort lifetime value from partial revenue curves using retention decay and payback windows, marking where extrapolation stops being defensible.
+- `user-path-analyzer` — Extracts common navigation paths and loops from event streams into Sankey-ready aggregates, collapsing rare branches that make path charts unreadable.
+- `metric-anomaly-explainer` — Triages a metric spike or drop through instrumentation breaks, seasonality, mix shift, and segment drill-down before anyone writes an incident narrative.
+- `experiment-readout-writer` — Turns A/B results into a readout with effect sizes, confidence intervals, guardrails, and a ship-or-kill recommendation instead of a bare p-value.
+- `sql-fanout-join-auditor` — Inspects analyst SQL for join fan-out, duplicated aggregates, and NULL-swallowing filters that silently inflate counts in dashboards and one-off pulls.
+- `sessionization-sql-builder` — Writes gaps-and-islands SQL that groups events into sessions by inactivity timeout, handling timezone boundaries and cross-day sessions window functions usually mangle.
+- `sql-date-spine-builder` — Generates a date or hour spine and left-joins it to sparse aggregates so time-series charts show zeros instead of skipping empty periods.
+- `dashboard-layout-designer` — Arranges a dashboard around one question per view with a headline metric, supporting cuts, and filters, cutting tiles nobody acts on.
+- `chart-type-selector` — Matches chart form to the analytical question and data shape, rejecting pie charts, dual axes, and truncated baselines that mislead readers.
+- `dashboard-sprawl-pruner` — Ranks dashboards by view counts, owners, and duplication, then archives or merges the stale ones and redirects viewers to certified replacements.
+- `lookml-explore-designer` — Designs LookML Explores with join relationships, symmetric aggregates, and fan-out-safe measures so self-serve users cannot build silently wrong queries.
+- `bi-row-security-modeler` — Implements row-level security in Looker, Metabase, or Superset with user attributes and sandbox tests proving each role sees only permitted rows.
+- `tableau-extract-tuner` — Speeds up slow Tableau workbooks by replacing live connections with extracts, pruning unused fields, and moving row-level calculations upstream into the warehouse.
+- `exec-metric-brief-writer` — Drafts a recurring executive metrics brief that leads with movement, names the driver and owner, and keeps chart count under a page.
+- `insight-narrative-builder` — Structures a one-off analysis into a decision-ready storyline with a claim, evidence chain, annotated charts, and the action it should trigger.

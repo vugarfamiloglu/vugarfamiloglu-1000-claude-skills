@@ -1,0 +1,37 @@
+## Performance & Observability
+
+- `otel-instrumentation-planner` — Plans which operations get OpenTelemetry spans, where boundaries fall, and which attributes carry cardinality risk before instrumentation code lands.
+- `otel-semconv-mapper` — Maps span and metric names onto OpenTelemetry semantic conventions, so traces from separate services join instead of drifting into private vocabularies.
+- `trace-sampling-strategist` — Designs head, tail, and error-biased sampling rules for the OpenTelemetry Collector so rare failures survive while trace storage stays inside budget.
+- `trace-waterfall-analyzer` — Reads a distributed trace waterfall, separates critical-path latency from parallel fan-out and queue wait, and names the span worth fixing.
+- `context-propagation-debugger` — Diagnoses orphaned spans and broken traces across async boundaries, message queues, and gateways by checking W3C traceparent handoff at every hop.
+- `structured-log-schema-designer` — Defines a JSON log schema with stable field names, severity levels, bounded payloads, and trace IDs so incident queries return whole requests.
+- `log-volume-cost-cutter` — Cuts log ingest spend by ranking lines by volume, then applying sampling, level demotion, and field pruning without losing debuggable signal.
+- `metric-cardinality-auditor` — Finds the labels exploding Prometheus series counts, ranks offenders by active series, and replaces unbounded dimensions with bucketed or dropped ones.
+- `histogram-bucket-designer` — Chooses latency histogram bucket boundaries, native or explicit, so p99 stays accurate near the SLO threshold without multiplying series per endpoint.
+- `engineer-dashboard-composer` — Lays out a service dashboard top-down from SLO to saturation, cutting vanity panels so an on-call engineer finds cause within two screens.
+- `slo-target-definer` — Derives SLIs and SLO targets from real user journeys and historical latency data, rejecting numbers the current architecture provably cannot hold.
+- `error-budget-policy-writer` — Drafts an error budget policy fixing burn thresholds, feature-freeze triggers, and decision owners, so budget exhaustion produces action rather than argument.
+- `burn-rate-alert-calculator` — Computes multi-window multi-burn-rate thresholds from an SLO target, emitting Prometheus rules that page on fast burns and ticket slow ones.
+- `alert-fatigue-reducer` — Audits months of firing history, deletes alerts nobody ever acted on, and merges the rest into symptom-based pages with named owners.
+- `incident-timeline-reconstructor` — Rebuilds a minute-by-minute incident timeline from traces, metrics, logs, and deploy events, marking first symptom, first page, and causal change.
+- `flamegraph-hotpath-reader` — Ranks flame graph frames by self time from pprof, async-profiler, or perf output, then proposes the narrowest fix per hot path.
+- `alloc-profile-reducer` — Pinpoints allocation call sites by bytes from Go pprof, JFR, or tracemalloc, then converts the worst offenders into pooling or reuse.
+- `gc-pause-correlator` — Correlates garbage collection pause telemetry with p99 latency spikes across JVM, Go, and Node, proving whether collection actually causes the tail.
+- `heap-snapshot-differ` — Diffs successive heap snapshots from Chrome DevTools or Eclipse MAT, follows retainer chains, and names the cache, closure, or listener leaking.
+- `span-fanout-detector` — Detects repeated identical spans fanning out inside one trace, exposing N+1 patterns across databases, HTTP calls, and cache lookups in production.
+- `cache-effectiveness-auditor` — Measures hit ratio, key churn, and stampede rate per cache tier, then reports whether the cache actually buys latency or hides staleness.
+- `tail-latency-interpreter` — Explains why averaged percentiles lie, recomputes true aggregate p99 from histograms, and identifies which requests and users live in the tail.
+- `latency-budget-allocator` — Splits an end-to-end latency target across gateway, service, cache, and database hops, flagging every hop whose measured p99 overruns its share.
+- `latency-cost-modeler` — Prices a latency change by tying p95 shifts to conversion, retry volume, and compute spend, so optimizations get funded or dropped.
+- `k6-load-script-author` — Writes k6 scripts with staged ramps, think time, and thresholds bound to SLOs, so a failed latency target fails the run.
+- `saturation-knee-finder` — Ramps k6, Locust, or JMeter load until throughput plateaus, records the knee point, and names what saturated first: CPU, pool, or disk.
+- `perf-regression-ci-gate` — Wires bundle bytes, Lighthouse scores, and benchmark timings into a CI baseline comparison that fails pull requests exceeding budget beyond noise.
+- `lcp-bottleneck-diagnoser` — Breaks LCP into TTFB, resource load delay, load duration, and render delay, then names which of the four subparts to attack.
+- `inp-interaction-profiler` — Attributes slow INP to input delay, processing time, or presentation delay using Long Animation Frames data, then names the handler to fix.
+- `cls-shift-source-tracer` — Traces layout shifts to their source nodes with PerformanceObserver, then reserves space using aspect-ratio, size attributes, or min-height on late slots.
+- `long-task-splitter` — Chops main-thread tasks over fifty milliseconds into yielded chunks with scheduler.yield or postTask, restoring input responsiveness without changing output.
+- `worker-offload-planner` — Decides which parsing, diffing, or crypto work belongs in a Web Worker, then designs the transferable message boundary and main-thread fallback.
+- `image-delivery-optimizer` — Picks format, responsive sizes, srcset, priority hints, and placeholder strategy per image role, cutting bytes without introducing a layout shift.
+- `font-loading-strategist` — Selects subsetting, preload, font-display, and fallback metric overrides so text paints early and the webfont swap costs no visible reflow.
+- `bundle-bloat-analyzer` — Pins bundle weight on dependencies, duplicates, and polyfills using webpack, Vite, or Rollup stats, then proposes splits, swaps, or removals.

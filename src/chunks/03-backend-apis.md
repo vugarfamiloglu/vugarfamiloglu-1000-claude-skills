@@ -1,0 +1,42 @@
+## Backend, APIs & Services
+
+- `openapi-drift-detector` — Compares implemented routes against the OpenAPI document and reports undocumented endpoints, stale schemas, and response codes handlers actually return.
+- `api-breaking-change-detector` — Diffs two contract versions with oasdiff or buf, classifies each change as breaking or additive, and fails CI on undeclared breaks.
+- `client-sdk-generator` — Generates typed client SDKs from OpenAPI or protobuf specs, wiring pagination helpers, retry policy, and token refresh into every release.
+- `api-error-taxonomy-builder` — Builds a stable error code catalog mapped onto HTTP statuses and RFC 9457 problem+json bodies, marking each code retryable or terminal.
+- `etag-precondition-wirer` — Adds ETag generation and If-Match handling to mutating endpoints so concurrent writers receive 412 instead of silently clobbering each other.
+- `graphql-dataloader-wirer` — Wires DataLoader batching into GraphQL resolvers, collapsing per-field fan-out into batched loads with request-scoped caches and correct key ordering.
+- `graphql-cost-limiter` — Caps query depth and complexity with static cost analysis, persisted query allowlists, and per-client budgets enforced before any resolver runs.
+- `proto-schema-designer` — Designs protobuf messages and services with safe field numbering, reserved ranges, and oneof usage that keeps the wire format backward compatible.
+- `grpc-streaming-designer` — Designs unary, server, and bidirectional gRPC calls with deadlines, keepalive settings, flow control, and cancellation that reaches the handler.
+- `trpc-router-organizer` — Splits tRPC routers by domain, types the request context, chains auth middleware, and maps thrown errors onto stable client-facing codes.
+- `oauth-grant-selector` — Picks the right OAuth 2.0 grant per client type, mandating PKCE and rejecting implicit and password grants per the Security BCP.
+- `oidc-token-validator` — Validates ID tokens against issuer, audience, nonce, and signature, caching JWKS with rotation and clock-skew tolerance instead of trusting decoded claims.
+- `passkey-ceremony-wirer` — Implements WebAuthn registration and authentication ceremonies with server-stored challenges, correct relying party IDs, user verification policy, and discoverable credentials.
+- `refresh-token-rotator` — Rotates refresh tokens on every use, detects replay of a retired token, and revokes the whole token family when reuse appears.
+- `session-cookie-hardener` — Sets session cookie attributes, __Host- prefixes, idle and absolute lifetimes, and rotation on privilege change to close fixation and CSRF gaps.
+- `api-key-lifecycle-manager` — Issues, scopes, hashes, and rotates API keys with searchable prefixes, last-used tracking, and one-click revocation when a key leaks publicly.
+- `webhook-signature-verifier` — Verifies inbound webhook signatures using timestamped HMAC schemes, constant-time comparison, replay windows, and the raw body before any JSON parsing.
+- `webhook-delivery-retrier` — Builds outbound webhook delivery with exponential backoff, jitter, attempt logs, endpoint auto-disable after repeated failures, and manual replay from the dashboard.
+- `payment-webhook-reconciler` — Handles payment provider events idempotently, tolerating out-of-order and duplicate delivery, and reconciles local state against the provider API as truth.
+- `dead-letter-queue-triager` — Groups dead-letter messages by failure signature, separates poison payloads from transient outages, and replays the recoverable ones after the fix ships.
+- `queue-backpressure-tuner` — Tunes consumer concurrency, prefetch, and visibility timeouts against queue lag, adding load shedding before the worker pool drowns in redeliveries.
+- `outbox-pattern-implementer` — Replaces dual writes with a transactional outbox and relay so committed state changes still publish their events when the broker is down.
+- `job-status-endpoint-builder` — Turns slow endpoints into 202 responses with a status resource carrying progress, terminal states, cancellation, and a result link clients can poll.
+- `cron-schedule-planner` — Writes cron schedules that survive DST and leap days, adds distributed locks against overlapping runs, and sets catch-up policy for missed executions.
+- `cache-invalidation-planner` — Designs cache key namespaces, TTL versus event-driven invalidation, negative caching, and single-flight guards that stop stampedes when a hot key expires.
+- `http-cache-header-writer` — Chooses Cache-Control directives, Vary, and stale-while-revalidate values per endpoint so shared caches never serve one user's private response to another.
+- `rate-limit-algorithm-selector` — Compares token bucket, sliding window, and GCRA for a given traffic shape, then emits limiter config plus 429 responses with Retry-After.
+- `cursor-pagination-builder` — Replaces offset paging with opaque keyset cursors, stable sort tiebreakers, and bidirectional page info that stays correct while rows are inserted.
+- `bulk-endpoint-designer` — Designs batch endpoints with per-item results, partial failure reporting, size caps, and idempotent semantics instead of failing everything on one bad row.
+- `api-version-strategist` — Chooses between URI, header, and media type versioning, defines the support window, and decides which changes justify a new major version.
+- `api-deprecation-scheduler` — Plans endpoint retirement with Deprecation and Sunset headers, usage telemetry gates, consumer notice timelines, and a dated brownout schedule before removal.
+- `tenant-isolation-auditor` — Traces tenant context from request to storage, flagging queries, caches, and background jobs that can leak one tenant's rows to another.
+- `websocket-protocol-designer` — Defines a WebSocket message envelope with heartbeats, resume tokens, per-connection backpressure, and an auth handshake that survives reconnects and proxy timeouts.
+- `sse-stream-builder` — Streams server-sent events with correct framing, event ids for Last-Event-ID resume, retry hints, and headers that stop proxies from buffering.
+- `presigned-upload-designer` — Moves uploads off the API with presigned URLs, enforcing size, content type, and expiry constraints, then confirming the object before linking it.
+- `resumable-upload-implementer` — Implements chunked resumable uploads with the tus protocol or multipart parts, checksum verification, offset recovery, and cleanup of abandoned sessions.
+- `transactional-email-dispatcher` — Sends transactional email idempotently, respects suppression lists, ingests bounce and complaint webhooks, and verifies SPF, DKIM, and DMARC alignment before launch.
+- `sms-delivery-router` — Normalizes numbers to E.164, counts GSM-7 versus UCS-2 segments, handles STOP opt-outs, and processes delivery receipts across per-country sender rules.
+- `bff-aggregation-composer` — Composes a backend-for-frontend endpoint that fans out to upstream services in parallel, degrades on partial failure, and returns what the screen needs.
+- `idempotency-key-enforcer` — Implements Idempotency-Key handling with request fingerprinting, stored responses, concurrent-duplicate locking, and a retention window so retried POSTs never double-charge.

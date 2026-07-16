@@ -1,0 +1,27 @@
+## Research & Synthesis
+
+- `research-question-framer` — Converts a vague brief into an answerable question with scope, unit of analysis, the decision at stake, and stopping criteria.
+- `literature-review-planner` — Turns a research question into search strings, database choices, inclusion criteria, and a screening log before any reading starts.
+- `scholarly-search-builder` — Writes database-specific syntax for PubMed MeSH, Scopus, and Google Scholar, then tunes recall against a known-item seed set.
+- `snowball-citation-crawler` — Runs forward and backward citation snowballing from seed papers until new hits stop appearing, logging the saturation point reached.
+- `prisma-protocol-builder` — Drafts a systematic review protocol with PRISMA flow counts, PICO framing, dual screening, and a pre-registered deviation log.
+- `source-credibility-scorer` — Rates each source on provenance, funding, peer review, and recency against a fixed rubric, recording the score beside every claim.
+- `source-bias-mapper` — Identifies funding ties, selection effects, and framing language across a source set, then rebalances the reading list toward opposing evidence.
+- `primary-source-locator` — Replaces press releases and secondary retellings with the underlying filing, dataset, or paper, and records the retrieval date.
+- `retraction-status-checker` — Screens a reference list against retraction and expression-of-concern registries, flagging withdrawn work and the papers still citing it.
+- `paper-methods-auditor` — Reads a paper in methods-first order, testing sample size, controls, and effect claims against the abstract's stated conclusion.
+- `evidence-table-builder` — Extracts population, method, effect size, and limitation fields from each study into a comparable evidence table with source anchors.
+- `finding-confidence-rater` — Assigns GRADE-style confidence to each finding from study design, consistency, and directness, then states what evidence would raise it.
+- `source-conflict-reconciler` — Resolves conflicting sources by comparing method, sample, and date, then reports which finding supersedes and what would change the verdict.
+- `research-note-synthesizer` — Clusters raw notes into claim-level themes with traceable source anchors, keeping quotes, paraphrase, and inference visibly separated.
+- `claim-provenance-tracer` — Traces a claim back through citation chains to its primary source, exposing citation laundering and quotes that mutated in transit.
+- `claim-checkability-triager` — Ranks claims in a draft by falsifiability and damage if wrong, then verifies the top tier against primary sources.
+- `citation-integrity-checker` — Verifies every citation resolves to a real work that says what the text claims, flagging fabricated DOIs and misquotes.
+- `web-source-archiver` — Snapshots cited web pages into an archive with timestamps and hashes so quotes survive link rot and silent edits.
+- `briefing-doc-writer` — Structures a decision brief with the bottom line first, confidence levels, dissenting evidence, and an appendix carrying full citations.
+- `expert-interview-planner` — Prepares an expert interview with prior-knowledge gaps, non-leading question ladders, disclosure boundaries, and a note-capture template.
+- `survey-instrument-designer` — Writes survey items free of double-barreled and leading wording, orders them to limit priming, and specifies the sampling frame.
+- `competitive-scan-builder` — Maps competitors across pricing, positioning, and feature gaps from public sources into a comparison grid with dated evidence links.
+- `market-sizing-estimator` — Builds top-down and bottom-up market size estimates from cited inputs, stating assumptions and a range instead of one number.
+- `prior-art-searcher` — Searches patent databases with CPC classes and claim-term synonyms, then charts each hit against the target claim elements.
+- `patent-landscape-mapper` — Clusters a patent corpus by assignee, priority date, and CPC class to expose white space and expiring blocking families.

@@ -1,0 +1,32 @@
+## Data Engineering & Pipelines
+
+- `debezium-cdc-planner` — Configures Debezium connectors with snapshot modes, tombstone handling, and a stream cutover so initial loads and change events merge without gaps.
+- `ingestion-connector-builder` — Writes a Singer tap or Airbyte source with incremental state bookmarks, schema discovery, and rate-limit backoff when no vendor connector exists.
+- `source-target-reconciler` — Generates row-count and checksum comparisons between source tables and warehouse copies, then reports drift by partition when totals stop matching.
+- `kafka-topic-designer` — Sizes Kafka partitions, picks message keys, and sets retention, cleanup.policy, and replication before a topic ships and ordering guarantees get locked.
+- `kafka-consumer-lag-triager` — Diagnoses growing consumer lag from rebalance storms, slow poll loops, or partition skew, and prescribes max.poll.records and scaling fixes.
+- `avro-schema-evolution-validator` — Checks Avro or Protobuf changes against Schema Registry compatibility modes and flags field removals and default gaps that break live consumers.
+- `flink-checkpoint-tuner` — Tunes Flink checkpoint intervals, state backends, and two-phase-commit sinks when barrier alignment stalls or exactly-once delivery drops to at-least-once.
+- `stream-windowing-designer` — Picks tumbling, sliding, or session windows and sets watermarks and allowed lateness so event-time aggregations stay correct under out-of-order streams.
+- `dbt-incremental-strategist` — Chooses between merge, insert_overwrite, and append strategies, sets unique_key and partition predicates, and rewrites full-refresh models that outgrew their runtime.
+- `dbt-test-coverage-auditor` — Maps dbt generic and singular tests against source freshness and model criticality, then fills gaps and tunes test severity thresholds.
+- `dbt-snapshot-designer` — Builds slowly changing dimension snapshots with timestamp or check strategies, picking invalidate_hard_deletes and unique keys before history starts accumulating wrong.
+- `airflow-scheduling-auditor` — Audits Airflow schedule_interval, catchup, data_interval, and timezone settings to catch DAGs that skip runs or double-process partitions.
+- `airflow-to-dagster-migrator` — Converts Airflow DAGs into Dagster software-defined assets, mapping operators, XComs, and sensors, and stages a dual-run cutover plan.
+- `dagster-asset-designer` — Models pipelines as Dagster software-defined assets with partition definitions, io_managers, and auto-materialize policies instead of imperative op graphs.
+- `backfill-run-planner` — Plans a partitioned backfill with concurrency caps, checkpointing, and blast-radius limits, then sequences reruns so downstream models refresh in order.
+- `pipeline-idempotency-hardener` — Converts append-only pipeline writes into partition-overwrite or upsert operations keyed on stable business keys so retries never duplicate rows.
+- `late-arriving-dimension-resolver` — Handles facts landing before their dimension rows using inferred members, lookback windows, and restatement jobs that repair keys once dimensions arrive.
+- `spark-skew-join-tuner` — Diagnoses Spark stage skew from the SQL tab, then applies salting, broadcast hints, or adaptive query execution to unstick straggler tasks.
+- `parquet-layout-tuner` — Sets Parquet row-group size, compression codec, dictionary encoding, and Bloom filters, and merges small files that inflate scan latency.
+- `iceberg-table-maintainer` — Schedules Iceberg compaction, snapshot expiration, orphan-file cleanup, and manifest rewrites when metadata bloat slows planning or storage costs climb.
+- `delta-merge-tuner` — Speeds up Delta Lake MERGE upserts using partition pruning predicates, Z-order or liquid clustering, and deletion vectors when rewrite volume explodes.
+- `lake-partition-strategist` — Chooses partition columns and granularity for lake tables, sizing files against query filters and avoiding high-cardinality keys that shatter directories.
+- `snowflake-credit-optimizer` — Cuts Snowflake credit burn by right-sizing warehouses, tuning auto-suspend, adding query tags, and finding the queries behind spend spikes.
+- `bigquery-cost-controller` — Caps BigQuery spend with partition pruning, clustering, materialized views, custom quotas, and slot reservations after bytes-scanned billing surprises the team.
+- `redshift-distkey-planner` — Selects Redshift distribution style and sort keys from join and filter patterns, then schedules VACUUM and ANALYZE to keep plans honest.
+- `warehouse-migration-planner` — Sequences a Redshift or Hadoop move to Snowflake or BigQuery with dialect transpilation, dual-write parity checks, and a staged consumer cutover.
+- `data-contract-drafter` — Writes producer-consumer data contracts with schema, semantics, freshness SLAs, and breaking-change policy, then wires enforcement into CI before publishing a table.
+- `data-quality-suite-builder` — Assembles Great Expectations or Soda checks for volume, nullability, uniqueness, and distribution drift, wiring failures to quarantine instead of silent passes.
+- `column-lineage-tracer` — Parses warehouse SQL with sqlglot to emit column-level lineage graphs, answering which upstream field feeds a column before a breaking change lands.
+- `pipeline-pii-masker` — Classifies PII columns during ingestion and applies hashing, tokenization, or dynamic masking policies so raw identifiers never reach downstream marts.

@@ -1,0 +1,30 @@
+## Design Systems & Visual Design
+
+- `design-token-architect` — Structures raw, semantic, and component token tiers into DTCG-format JSON when a design system outgrows scattered CSS custom properties.
+- `multi-brand-theme-builder` — Derives per-brand token overrides from one shared core so a single component library skins several products without forking stylesheets.
+- `token-deprecation-migrator` — Plans a token rename or removal with an alias window, codemod, and adoption report so downstream consumers migrate without breaking.
+- `figma-variable-syncer` — Reconciles Figma variable collections against the repository token JSON, resolving renames, mode mismatches, and drift before either side publishes.
+- `hardcoded-style-detector` — Scans a codebase for hex colors, magic pixel values, and inline shadows that bypass tokens, suggesting the nearest token per hit.
+- `oklch-ramp-generator` — Generates perceptually even lightness ramps in OKLCH with controlled chroma curves, emitting CSS custom properties for every brand hue.
+- `apca-palette-tuner` — Adjusts palette lightness steps until each documented foreground and background pairing clears its APCA target, printing the corrected OKLCH values.
+- `semantic-color-mapper` — Binds palette ramps to intent roles such as danger, success, and info, recording each mapping so components stop choosing colors ad hoc.
+- `dark-mode-palette-deriver` — Derives a dark counterpart from a light palette by rebalancing lightness and chroma in OKLCH, then rechecking surface tints and pairings.
+- `type-scale-composer` — Composes a modular type scale from a base size and ratio, emitting clamp() values with matched line heights and tracking per step.
+- `typeface-pairing-selector` — Selects display and text pairings by x-height ratio, stroke contrast, and vertical metrics, noting license tier and self-hosted weight budget.
+- `baseline-grid-aligner` — Snaps type and component heights onto a four-pixel baseline grid, listing every offender with the line-height or padding fix required.
+- `spacing-scale-calibrator` — Calibrates a spacing scale with density tiers, binding each step to component padding and stack gaps so layouts abandon arbitrary pixels.
+- `layout-grid-planner` — Specifies column count, gutter, and margin per breakpoint, then records which components span which tracks so responsive layouts stay predictable.
+- `elevation-system-builder` — Builds a layered shadow scale with matched ambient and key light values, tying each z-level to surface tint and border treatment.
+- `motion-token-designer` — Defines duration and easing tokens per interaction class, pairing enter, exit, and emphasis curves so every transition reads as one system.
+- `easing-curve-tuner` — Converts spring parameters into cubic-bezier approximations and back, reporting overshoot, settling time, and the CSS value to paste.
+- `figma-component-api-designer` — Names Figma component properties, variants, and slots to mirror coded props so a boolean in the file matches a boolean in code.
+- `variant-state-enumerator` — Enumerates the interaction states a component owes (hover, focus, active, disabled, selected, loading) and lays out the Figma variant grid before design review.
+- `figma-library-hygienist` — Audits a Figma library for detached instances, local styles, duplicate components, and page sprawl, ranking cleanup by how many files break.
+- `brand-book-translator` — Converts a static brand book's logo rules, palette, and type specs into product design tokens and component overrides for a live surface.
+- `icon-set-normalizer` — Normalizes icon artwork onto one grid, stroke weight, and optical size, outlining strokes to paths and pruning near-duplicate glyphs.
+- `chart-palette-composer` — Composes categorical, sequential, and diverging chart scales that stay separable under color-vision deficiency and hold their meaning in both themes.
+- `dataviz-style-tokenizer` — Turns axis, gridline, legend, and tooltip treatments into tokens, stripping chart junk so every chart looks native to the product.
+- `spec-redline-annotator` — Annotates a design frame with measured spacing, type, and color redlines that name the token behind each value instead of the raw pixel.
+- `design-drift-auditor` — Compares a staging build against its design source, listing spacing, type, and color drifts alongside the token each element should use.
+- `generic-aesthetic-detector` — Scores a UI against default-template tells like centered hero, gradient blob, uniform cards, and violet accent, prescribing a specific replacement direction.
+- `art-direction-brief-writer` — Turns product positioning into a named visual direction with references, palette, type, texture, and motion rules before any pixels move.

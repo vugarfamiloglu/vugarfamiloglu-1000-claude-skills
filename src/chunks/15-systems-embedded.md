@@ -1,0 +1,27 @@
+## Systems, Embedded & Low-Level
+
+- `linker-script-author` — Authors GNU ld scripts with correct MEMORY regions, section placement, VMA versus LMA, and symbols the startup code expects.
+- `cross-toolchain-configurator` — Sets up a cross-compile target with matching triple, sysroot, CMake toolchain file, and Rust target spec, then proves it links.
+- `no-std-rust-migrator` — Strips std from a Rust crate, adding panic handler, allocator choice, memory.x layout, and embedded-hal traits until the target flashes.
+- `unsafe-ffi-boundary-validator` — Checks repr(C) layouts, ownership transfer, and null and lifetime invariants across a Rust-to-C boundary, then runs Miri on the wrappers.
+- `misra-c-compliance-auditor` — Maps flagged code to specific MISRA C:2012 rules, separating mandatory from advisory, and drafts the deviation records auditors require.
+- `mmio-register-accessor-generator` — Turns a CMSIS-SVD file into typed register accessors, guarding volatile ordering, read-modify-write hazards, and write-only bits the datasheet forbids reading.
+- `devicetree-overlay-writer` — Composes device tree overlays and bindings for pinctrl, clocks, and interrupts, then verifies the compiled blob against the driver's compatible string.
+- `char-device-ioctl-designer` — Designs a stable ioctl ABI with _IOR and _IOW numbering, copy_to_user checks, compat handlers, and versioned structs for a char device.
+- `kernel-lock-context-checker` — Finds sleeping calls in atomic context, wrong GFP flags, and spinlock versus mutex misuse before a kernel module deadlocks.
+- `dma-coherency-debugger` — Tracks corrupted DMA transfers to missing cache clean or invalidate, wrong buffer alignment, or descriptors placed in cacheable memory.
+- `isr-latency-budgeter` — Budgets interrupt latency and jitter per priority level, splitting work into top and bottom halves and banning blocking calls from handlers.
+- `rtos-priority-inversion-auditor` — Detects unbounded priority inversion in FreeRTOS or Zephyr tasks, prescribing mutex inheritance, ceilings, or rate-monotonic priority reassignment.
+- `rtos-stack-depth-profiler` — Measures worst-case task stack use from high-water marks and call-graph analysis, then sizes each stack with a justified safety margin.
+- `hardfault-postmortem-analyzer` — Decodes Cortex-M CFSR, HFSR, and BFAR bits, unwinds the stacked frame, and names the faulting instruction from the map file.
+- `jtag-swd-session-runner` — Drives OpenOCD or probe-rs sessions to halt, flash, and single-step a target, wiring RTT output and GDB into one command.
+- `logic-analyzer-trace-decoder` — Reads sigrok or Saleae captures to explain I2C NAKs, SPI mode mismatches, clock stretching, and UART framing errors on a bus.
+- `bootloader-flow-mapper` — Traces reset vector through boot ROM, SPL, U-Boot, and kernel handoff, marking where clocks, DRAM, and the vector table initialize.
+- `secure-boot-chain-designer` — Plans a signed boot chain with key hierarchy, fuse programming, rollback counters, and MCUboot slot layout before the device ships locked.
+- `mcu-power-budget-planner` — Models average current from sleep-mode residency, radio duty cycle, and peripheral draw, then reports battery life against a coin-cell budget.
+- `heap-fragmentation-analyzer` — Replaces malloc churn with static pools or arenas on memory-constrained targets, sizing each pool from allocation traces and worst-case concurrency.
+- `elf-symbol-size-mapper` — Attributes flash and RAM use to symbols and sections with bloaty, nm, and the map file, then names what to cut.
+- `endianness-abi-linter` — Flags struct padding, bitfield ordering, unaligned access, and byte-order assumptions that break when the same code crosses architectures.
+- `wire-protocol-frame-builder` — Specifies framing with COBS or length prefixes, CRC placement, version negotiation, and resynchronization rules so a corrupted link recovers deterministically.
+- `lwip-stack-tuner` — Sizes lwipopts.h pbuf pools, TCP windows, and memory settings for a constrained target, then explains which knobs caused packet drops.
+- `binary-format-parser-generator` — Writes Kaitai Struct specs for an undocumented binary or wire format, emitting parsers plus a hexdump-backed test corpus.

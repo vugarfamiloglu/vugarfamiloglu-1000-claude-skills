@@ -1,0 +1,32 @@
+## Developer Tooling & Build Systems
+
+- `webpack-vite-migrator` — Ports webpack or Create React App setups to Vite, mapping loaders onto plugins, rewriting env access, and flagging unsupported features.
+- `rollup-treeshake-debugger` — Traces why Rollup or Vite keeps dead exports, checking sideEffects flags, PURE annotations, CJS interop, and re-export barrels.
+- `vite-plugin-author` — Writes Vite plugins with correct hook order, apply and enforce options, and virtual module conventions when build behavior needs customizing.
+- `sourcemap-chain-verifier` — Verifies source maps survive transpile, bundle, and minify steps, then checks upload to Sentry resolves original stack frames.
+- `browserslist-target-tuner` — Aligns browserslist queries with transpile targets and core-js polyfill mode, then reports which syntax each configured browser still misses.
+- `hmr-failure-debugger` — Diagnoses dead hot reload and file watchers, covering inotify limits, Docker bind mounts, WSL paths, polling fallbacks, and self-accepting modules.
+- `tsc-trace-analyzer` — Runs tsc --generateTrace, reads the trace for type instantiation hotspots, and proposes fixes when TypeScript compiles too slowly.
+- `tsconfig-references-designer` — Splits a TypeScript codebase into composite projects with references, wiring incremental builds and declaration output for faster rebuilds.
+- `babel-swc-migrator` — Moves a Babel toolchain to SWC or oxc, mapping presets to equivalents, listing plugins without parity, and preserving decorator semantics.
+- `pnpm-workspace-migrator` — Converts npm or Yarn workspaces to pnpm, exposing phantom dependencies, setting hoisting and peer rules, and regenerating the lockfile.
+- `lockfile-merge-resolver` — Resolves lockfile merge conflicts by regenerating rather than hand-editing, covering package-lock.json, pnpm-lock.yaml, yarn.lock, Cargo.lock, and uv.lock.
+- `dependency-upgrade-planner` — Batches a dependency upgrade backlog into risk tiers using semver diffs and changelogs, then sequences batches so each stays independently revertable.
+- `package-exports-mapper` — Authors package.json exports, imports, and types conditions for dual ESM/CJS output, then validates with publint and are-the-types-wrong.
+- `uv-python-migrator` — Migrates pip, Poetry, or Pipenv projects to uv, translating dependency groups, pinning the interpreter, and producing a committed uv.lock.
+- `cargo-feature-unifier` — Debugs Cargo feature unification across a workspace, explaining resolver versions, default-features leaks, and why one crate silently enables another's optional features.
+- `go-module-graph-auditor` — Audits go.mod graphs for stray replace directives, +incompatible versions, missing major suffixes, and minimal version selection surprises after go get.
+- `peer-dependency-resolver` — Untangles ERESOLVE and peer conflicts by reading the dependency tree, then choosing between overrides, resolutions, or an actual version bump.
+- `native-addon-build-fixer` — Repairs node-gyp and prebuild failures by checking toolchain versions, Python, ABI targets, and choosing prebuilt binaries over local compilation.
+- `turborepo-task-graph-designer` — Models Turborepo tasks with precise inputs, outputs, and dependsOn edges so caching stays correct when packages are added or split.
+- `nx-generator-author` — Builds custom Nx generators and executors with a virtual file tree, dry-run support, and tests so scaffolding stays consistent across teams.
+- `bazel-target-writer` — Writes BUILD.bazel targets with correct visibility, deps, and toolchain rules, translating an existing npm or Go layout into hermetic builds.
+- `build-cache-miss-debugger` — Finds why Turborepo, Nx, or Bazel caches miss, hunting timestamps, absolute paths, env leaks, and unlisted inputs in the hash.
+- `path-alias-synchronizer` — Keeps tsconfig paths, bundler aliases, Jest moduleNameMapper, and ESLint resolver settings in agreement so imports resolve identically everywhere.
+- `codegen-drift-detector` — Regenerates checked-in generated code and fails when output drifts from its schema, wiring the check into pre-commit and build steps.
+- `cli-flag-designer` — Designs CLI surfaces with POSIX-conformant flags, subcommand nesting, exit codes, stdin/stdout contracts, and --json output before the first command ships.
+- `shell-completion-generator` — Emits bash, zsh, and fish completion scripts from a CLI's command tree, including dynamic value completion and install instructions.
+- `devcontainer-spec-builder` — Assembles devcontainer.json with features, lifecycle hooks, mounts, and forwarded ports so a repo opens ready to build on any machine.
+- `nix-devshell-builder` — Writes a Nix flake devShell pinning compilers, language servers, and CLI tools, with direnv wiring and a cache-friendly input strategy.
+- `toolchain-version-pinner` — Pins runtime versions across .nvmrc, .tool-versions, rust-toolchain.toml, and .python-version, reconciling mise or asdf with engines fields and Dockerfiles.
+- `editor-toolchain-aligner` — Points the editor at the repo's own TypeScript, formatter, and linter versions so in-editor diagnostics match what the build actually reports.

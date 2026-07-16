@@ -1,0 +1,37 @@
+## Agents, MCP & Claude Code Tooling
+
+- `agent-topology-selector` — Chooses between a fixed workflow, a single agent loop, and orchestrator-worker fan-out when scoping an automation, scoring ambiguity, error cost, and verifiability.
+- `agent-loop-designer` — Designs an agent's think-act-observe loop with explicit stop conditions, turn budgets, and state carried between steps, before writing the runner.
+- `agent-handoff-designer` — Specifies handoff contracts between agents covering payload schema, ownership transfer, and termination rules, so multi-agent runs stop dropping task state.
+- `subagent-task-decomposer` — Decomposes a large task into parallel subagent briefs with isolated context, explicit deliverables, and merge rules, when one context window cannot hold it.
+- `subagent-definition-writer` — Writes .claude/agents definition files with name, description, tools, and model frontmatter so Claude Code delegates to the right subagent automatically.
+- `autonomous-loop-hardener` — Adds step budgets, drift detection, cost ceilings, and a kill switch to an agent loop that will run unattended overnight or in CI.
+- `tool-description-tuner` — Rewrites tool names, descriptions, and parameter docs from eval traces where the model picked the wrong tool or hallucinated arguments.
+- `tool-result-shaper` — Caps and reshapes tool return payloads with field filtering, pagination cursors, and truncation markers when raw API responses flood the context window.
+- `tool-error-message-writer` — Turns tool failures into model-actionable error strings that name the bad field and the fix, replacing raw stack traces and HTTP codes.
+- `tool-idempotency-hardener` — Gives write tools idempotency keys, dry-run flags, and confirmation gates so an agent retrying after a timeout cannot duplicate side effects.
+- `mcp-server-scaffolder` — Scaffolds a new MCP server in FastMCP or the TypeScript SDK, wiring tool registration, structured output schemas, and server lifecycle correctly.
+- `mcp-transport-selector` — Picks stdio, Streamable HTTP, or legacy SSE transport for an MCP server and configures sessions, resumability, and origin checks accordingly.
+- `mcp-oauth-flow-builder` — Wires OAuth 2.1 with PKCE, dynamic client registration, and resource indicators into a remote MCP server when bearer tokens must be user-scoped.
+- `mcp-tool-surface-trimmer` — Measures token cost per tool definition across connected MCP servers, then disables unused tools and merges overlapping ones crowding the context window.
+- `mcp-server-conformance-tester` — Exercises an MCP server against the protocol: initialize handshake, capability negotiation, JSON-RPC error codes, and schema round-trips, before publishing it.
+- `mcp-connection-debugger` — Diagnoses an MCP server that starts but exposes no tools, checking stdout pollution, env inheritance, handshake timeouts, and protocol version skew.
+- `mcp-confused-deputy-auditor` — Audits an MCP server for token passthrough, confused deputy proxying, and tool-description injection before it is exposed to untrusted callers.
+- `claude-hooks-builder` — Implements PreToolUse, PostToolUse, and Stop hooks for Claude Code with correct JSON stdin parsing and blocking exit codes when a rule must always fire.
+- `claude-settings-resolver` — Traces why a Claude Code permission, env var, or model setting is not applying, across enterprise, project, local, and user settings files.
+- `slash-command-builder` — Authors Claude Code slash commands with frontmatter for allowed-tools, argument-hint, and model, plus $ARGUMENTS handling and bash or file interpolation.
+- `claude-md-curator` — Prunes and restructures CLAUDE.md when instructions stop being followed, cutting contradictions, dead rules, and prose the model reads but never applies.
+- `skill-description-optimizer` — Tunes SKILL.md frontmatter descriptions to fix false and missed triggers, then measures firing accuracy against a labeled prompt set.
+- `skill-content-splitter` — Splits an oversized SKILL.md into progressive-disclosure reference files and scripts, keeping the always-loaded body under budget when the instructions outgrow one file.
+- `skill-library-deduplicator` — Finds overlapping, stale, and never-triggered skills in a large library, measures description collisions, and proposes merges or deletions.
+- `agent-memory-designer` — Separates what an agent persists between sessions into facts, episodes, and artifacts, with write, refresh, and decay rules that stop memory rot.
+- `context-compaction-planner` — Plans mid-run history compaction: what to summarize, what to offload to files, and what must survive verbatim, before a long agent session degrades.
+- `context-window-budgeter` — Allocates a run's context window across system prompt, tool schemas, history, and retrieved files, flagging overruns before the agent starts working.
+- `agent-permission-scoper` — Scopes allow, ask, and deny permission rules for an agent's tools, narrowing paths, commands, and domains to what the task actually needs.
+- `agent-sandbox-builder` — Builds a container, VM, or git worktree sandbox with filesystem and network egress allowlists before letting an agent run unattended shell commands.
+- `human-checkpoint-designer` — Places approval gates at an agent workflow's irreversible steps, defining what the reviewer sees, what they can edit, and how the run resumes.
+- `agent-eval-harness-builder` — Assembles a regression suite for an agent from frozen task fixtures, mocked tools, and trajectory assertions, so prompt edits stop silently breaking behavior.
+- `tool-call-mock-recorder` — Records live tool calls into replayable fixtures so agent tests run deterministically offline instead of hitting real APIs on every suite run.
+- `agent-failure-triager` — Classifies a failed agent run against a taxonomy of wrong tool, bad argument, ignored result, lost context, and premature stop, then prescribes the fix.
+- `agent-run-checkpointer` — Persists agent state after each committed step so a crashed or interrupted long run resumes from the last good checkpoint instead of restarting.
+- `agent-cost-profiler` — Attributes token spend across turns, tools, and subagents from run logs, then names the biggest waste like re-read files or unbounded tool output.

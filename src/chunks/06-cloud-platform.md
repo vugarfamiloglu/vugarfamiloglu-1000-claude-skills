@@ -1,0 +1,37 @@
+## Cloud & Platform Engineering
+
+- `iam-policy-minimizer` — Mines CloudTrail and IAM Access Analyzer findings to shrink wildcard policies down to the actions each role actually invoked.
+- `gcp-iam-binding-auditor` — Audits GCP project IAM bindings for primitive roles, unused service accounts, and long-lived keys, emitting gcloud remediation commands.
+- `azure-rbac-scope-designer` — Designs Azure RBAC assignments across management group, subscription, and resource group scopes, producing custom role definitions with minimal actions.
+- `workload-identity-federator` — Replaces long-lived cloud keys with OIDC workload identity federation, writing trust policies and audience conditions for CI and Kubernetes workloads.
+- `aws-landing-zone-builder` — Lays out AWS Organizations OUs, service control policies, and account vending with Control Tower guardrails when bootstrapping a new landing zone.
+- `azure-policy-initiative-author` — Authors Azure Policy definitions and initiatives using audit, deny, and deployIfNotExists effects, testing compliance impact before assigning them at scope.
+- `cloud-cost-anomaly-triager` — Traces a bill spike to the responsible service, account, and change window using Cost Explorer or BigQuery billing exports.
+- `egress-cost-mapper` — Maps inter-region, cross-AZ, and NAT gateway data paths to price egress before an architecture ships, flagging cheaper transfer routes.
+- `reserved-capacity-planner` — Sizes Savings Plans, Reserved Instances, and committed use discounts from usage history, modeling coverage and break-even before any purchase.
+- `idle-resource-reaper` — Finds unattached volumes, idle NAT gateways, orphaned elastic IPs, and stale snapshots that still bill, then emits a staged deletion plan.
+- `vercel-usage-cost-auditor` — Attributes Vercel bill growth to image optimization, ISR writes, edge middleware invocations, or bandwidth, then applies caching and spend caps.
+- `lambda-cold-start-tuner` — Cuts Lambda cold starts by right-sizing memory, trimming package size, and choosing between SnapStart, provisioned concurrency, and a leaner runtime.
+- `serverless-concurrency-planner` — Sizes reserved and provisioned concurrency against downstream database connection limits, adding RDS Proxy or pooling before throttles and exhaustion hit.
+- `cloudflare-workers-porter` — Ports Node.js handlers onto the Workers runtime, replacing unsupported APIs and respecting CPU time, subrequest, and isolate memory limits.
+- `durable-objects-designer` — Models coordination state as Cloudflare Durable Objects, choosing ID strategy, alarms, and hibernation to avoid hot shards and runaway duration billing.
+- `vercel-function-region-tuner` — Aligns Vercel serverless and edge function regions with the primary database region, removing cross-continent round trips from request paths.
+- `gcp-cloud-run-tuner` — Tunes Cloud Run concurrency, min instances, and CPU allocation mode, trading cold starts against idle billing for a measured traffic shape.
+- `fly-machines-scaler` — Configures Fly.io Machines autostop, region placement, and volume affinity so scale-to-zero apps wake quickly without stranding stateful data.
+- `railway-private-network-wirer` — Wires Railway private networking between services with internal hostnames, IPv6 binding, and reference variables so billable public egress stops.
+- `supabase-pooler-configurator` — Picks Supavisor transaction or session pooling for Supabase and sizes pool limits so serverless bursts stop exhausting Postgres connections.
+- `s3-lifecycle-architect` — Designs S3 lifecycle rules and storage class transitions from access patterns, pricing Glacier retrieval and Intelligent-Tiering fees before applying them.
+- `r2-migration-planner` — Plans an S3 to Cloudflare R2 move, quantifying egress savings, mapping API and feature gaps, and sequencing a dual-write cutover.
+- `do-spaces-cdn-configurator` — Configures DigitalOcean Spaces with CDN endpoints, CORS rules, and custom subdomain certificates, mapping S3 API gaps before code assumes parity.
+- `cdn-cache-rule-builder` — Writes CloudFront or Cloudflare cache rules with explicit cache keys, TTLs, and Vary headers so dynamic routes stop poisoning the edge.
+- `netlify-redirect-linter` — Validates Netlify redirect rule files for first-match ordering, splat and placeholder syntax, and force flags before SPA routes silently break.
+- `dns-cutover-planner` — Sequences a nameserver or registrar migration with TTL step-downs, record parity diffs, and a rollback window before flipping production traffic.
+- `vpc-cidr-planner` — Allocates non-overlapping VPC CIDR blocks across accounts and regions, reserving ranges so later peering and Transit Gateway attachments remain possible.
+- `vpc-peering-troubleshooter` — Debugs cross-VPC connectivity by walking route tables, security groups, NACLs, and DNS resolution, catching the non-transitive peering trap early.
+- `private-endpoint-architect` — Replaces NAT gateway egress with VPC endpoints, PrivateLink, or Private Service Connect, weighing per-endpoint fees against saved data transfer charges.
+- `multi-region-failover-drill` — Builds and rehearses a regional failover runbook with stated RTO and RPO, replication lag gates, and DNS or Global Accelerator switching.
+- `sqs-dlq-triager` — Diagnoses SQS dead-letter buildup by matching visibility timeout to handler duration, then scripts a safe redrive with poison message quarantine.
+- `pubsub-subscription-tuner` — Tunes Pub/Sub ack deadlines, flow control, and ordering keys, choosing push or pull delivery so redelivery storms and backlog growth stop.
+- `service-quota-forecaster` — Projects launch traffic against AWS Service Quotas and GCP limits, filing increase requests early with the lead time each quota needs.
+- `cloud-migration-assessor` — Maps services between AWS, GCP, and Azure for a migration, scoring lock-in, rewrite effort, and one-time egress cost per workload.
+- `golden-path-template-builder` — Codifies a paved-road service template with Backstage scaffolder actions, wiring defaults for runtime, ownership, and provisioning so teams skip bespoke setup.

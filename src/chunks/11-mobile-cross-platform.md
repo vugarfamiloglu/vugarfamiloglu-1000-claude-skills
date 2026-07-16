@@ -1,0 +1,32 @@
+## Mobile & Cross-Platform
+
+- `ios-codesign-debugger` — Decodes Xcode signing errors by comparing provisioning profile entitlements, certificates, and bundle IDs, then prescribes the exact fix.
+- `ios-privacy-manifest-writer` — Generates PrivacyInfo.xcprivacy with required-reason API codes, tracking domains, and SDK signatures when App Store upload warns about missing manifests.
+- `ios-background-task-planner` — Decides between BGAppRefreshTask, BGProcessingTask, silent push, and background modes, then documents budget limits and simulator triggers for testing.
+- `swiftui-state-flow-auditor` — Flags misused @State, @StateObject, @ObservedObject, and @Observable ownership that causes lost state or redundant view rebuilds in SwiftUI.
+- `appstore-rejection-triager` — Maps an App Store Review rejection to the cited guideline, the code change required, and reviewer-note wording for resubmission.
+- `testflight-beta-orchestrator` — Plans TestFlight internal and external tester groups, build expiry, beta review triggers, and phased rollout gates before a public release.
+- `iap-receipt-validator` — Verifies StoreKit 2 transactions and Play Billing purchase tokens server-side, covering renewals, refunds, grace periods, and replay-safe entitlement grants.
+- `compose-recomposition-profiler` — Traces excessive Jetpack Compose recompositions using Layout Inspector counts and the compiler stability report, then applies keys and stable wrappers.
+- `android-workmanager-tuner` — Chooses WorkManager constraints, backoff, and expedited or foreground service types so jobs survive Doze and App Standby buckets.
+- `android-target-api-migrator` — Lists the behavior changes each targetSdk level forces, then sequences manifest, permission, and API edits for a safe compile-and-ship bump.
+- `android-keystore-rotator` — Rotates upload keys under Play App Signing, regenerating certificates, updating CI secrets, and re-registering SHA fingerprints for App Links and Firebase.
+- `android-oem-quirk-mapper` — Documents Xiaomi, Huawei, Samsung, and OnePlus background-kill behavior, then adds autostart prompts and watchdogs so scheduled work still runs.
+- `play-data-safety-generator` — Derives the Play Console Data safety declaration from actual SDK and permission usage, flagging collected fields the manifest never disclosed.
+- `flutter-platform-channel-designer` — Designs MethodChannel or Pigeon interfaces with correct threading, codec, and error mapping so Dart and native code stay type-safe.
+- `react-native-newarch-migrator` — Ports bridge modules to TurboModules and Fabric components, ordering codegen specs, interop layers, and library upgrades so the app keeps building.
+- `expo-eas-build-fixer` — Diagnoses failed EAS builds from log output, separating config plugin, prebuild, native dependency, and credential causes before retrying.
+- `capacitor-plugin-bridger` — Wires a Capacitor plugin across web, Swift, and Kotlin layers, registering it and declaring permissions in both native manifests.
+- `tauri-capability-hardener` — Narrows Tauri capability files, permission scopes, and CSP so the webview reaches only the commands and paths it needs.
+- `electron-security-auditor` — Checks contextIsolation, sandbox, nodeIntegration, preload surface, and navigation handlers against Electron's security checklist before packaging a desktop build.
+- `kmp-expect-actual-mapper` — Structures Kotlin Multiplatform source sets and expect/actual declarations so shared code compiles for JVM, iOS, and wasm targets.
+- `apns-payload-validator` — Validates APNs payloads against the 4KB limit, apns-push-type, priority, collapse-id, and alert key rules before a send fails silently.
+- `fcm-delivery-debugger` — Isolates why FCM messages never arrive, separating data-only versus notification payloads, Doze throttling, stale tokens, and quota rejections.
+- `deep-link-matrix-builder` — Builds apple-app-site-association and assetlinks.json alongside intent filters, then verifies each URL path resolves without falling back to the browser.
+- `mobile-permission-flow-builder` — Sequences rationale screens, iOS purpose strings, and Android runtime requests, covering one-time grants, precise location, and permanent denial paths.
+- `offline-sync-conflict-designer` — Selects last-write-wins, CRDT, or server-authority merge for an offline mobile store, then specifies the outbox queue and replay semantics.
+- `app-size-budget-analyzer` — Breaks an IPA or AAB into asset, framework, and R8 contributions, then names the cuts that meet a download-size budget.
+- `battery-drain-profiler` — Runs Battery Historian or Xcode energy logs against a session, attributing drain to wakelocks, location polling, and network retry storms.
+- `mobile-crash-symbolicator` — Symbolicates iOS and Android stack traces with dSYMs, ProGuard mappings, and ndk-stack, and wires the upload step into release builds.
+- `device-farm-matrix-planner` — Picks the smallest real-device and OS-version matrix covering your install base, weighting screen sizes, memory tiers, and vendor skins.
+- `maestro-flow-author` — Writes Maestro YAML flows for login, purchase, and deep-link journeys, adding waits and selectors that survive real-device timing variance.

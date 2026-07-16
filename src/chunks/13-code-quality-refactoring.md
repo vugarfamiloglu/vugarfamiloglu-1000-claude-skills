@@ -1,0 +1,32 @@
+## Code Quality & Refactoring
+
+- `dead-code-eliminator` — Finds unreachable exports and files with knip, ts-prune, or vulture, then deletes them after clearing dynamic-import and reflection false positives.
+- `stale-flag-cleaner` — Deletes a fully rolled-out feature flag and collapses the dead branch behind it, including its constants, helper wrappers, and orphaned test cases.
+- `copy-paste-detector` — Runs jscpd or PMD-CPD with tuned token thresholds, filters generated files, and ranks clone clusters by size and edit frequency.
+- `dry-abstraction-arbiter` — Decides whether duplicated code should be extracted or left alone, applying the rule of three and testing for coincidental similarity.
+- `complexity-hotspot-reducer` — Lowers cyclomatic and cognitive complexity in a flagged function using guard clauses, table dispatch, and extraction, re-measuring with lizard or radon.
+- `churn-complexity-mapper` — Crosses git churn with complexity metrics to rank refactor candidates, so effort lands on files that are both tangled and edited constantly.
+- `naming-clarity-reviewer` — Flags misleading identifiers such as getters that mutate, booleans lacking is or has prefixes, and quantities missing units, then proposes replacements.
+- `convention-drift-detector` — Surveys a codebase for competing conventions in imports, error shapes, and file layout, then picks one and lists every deviating file.
+- `lint-ruleset-curator` — Chooses which lint rules earn their keep, separating bug-catching rules from style noise and assigning error, warn, or off tiers per directory.
+- `custom-lint-rule-author` — Writes an ESLint, Ruff, or Semgrep rule that encodes a house convention reviewers keep repeating, with fixture tests and an autofix where safe.
+- `formatter-rollout-planner` — Introduces Prettier, Black, or gofmt to a legacy repo in staged commits that keep blame readable and reviews free of whitespace noise.
+- `mutation-to-immutable-converter` — Replaces in-place mutation with copy-on-write updates at module boundaries, flagging shared-reference aliasing that other callers silently depend on.
+- `mikado-refactor-planner` — Maps a large refactor with the Mikado Method, trying a change, recording what breaks, reverting, and emitting a leaf-first landing order.
+- `rewrite-vs-refactor-arbiter` — Weighs incremental refactor against a clean rewrite for one module using churn, defect density, and knowledge loss, then records the call.
+- `any-type-eliminator` — Replaces any with real types file by file, starting at leaf modules and using per-file strictness so the build never turns red.
+- `nullability-tightener` — Turns on strictNullChecks or an Option type incrementally, ranking call sites by blast radius and settling a null versus undefined convention.
+- `type-assertion-auditor` — Hunts every as cast, non-null bang, ts-expect-error, and type ignore, then removes, narrows, or documents each with the reason it survives.
+- `import-cycle-breaker` — Detects circular imports with madge or dependency-cruiser and breaks them by extracting shared types, inverting a dependency, or moving the offending symbol.
+- `god-object-decomposer` — Splits an overgrown class by clustering methods around the fields they touch, then extracts each cluster behind its own narrow interface.
+- `over-abstraction-collapser` — Inlines single-implementation interfaces, one-caller helpers, and speculative generics, shrinking indirection that was added for a second case that never arrived.
+- `code-smell-cataloger` — Names smells from Fowler's catalog consistently and maps each to its refactoring, detection query, and risk, so reviews stop inventing vocabulary.
+- `error-handling-normalizer` — Unifies mixed throw, Result, and error-code styles into one convention, adding context wrapping and typed errors at each module boundary.
+- `silent-catch-hunter` — Tracks down empty catch blocks, except-pass, ignored error returns, and swallowed promise rejections, then makes each one log, wrap, or propagate.
+- `comment-rot-auditor` — Catches comments that contradict the code beside them, commented-out blocks, and docstrings describing removed parameters, then fixes or deletes each.
+- `todo-debt-triager` — Sorts every TODO, FIXME, and HACK marker into fix now, file an issue, or delete, and stops new ones landing unowned.
+- `public-api-shrinker` — Narrows an exported surface by demoting internally-used symbols to private, collapsing barrel files, and marking entry points a package actually promises.
+- `internal-deprecation-runner` — Retires an internal API by marking it deprecated, migrating every caller, and deleting it on a dated schedule instead of leaving shims forever.
+- `codemod-author` — Builds a jscodeshift, ts-morph, ast-grep, or comby codemod for a mechanical change too large to hand-edit, with idempotence and dry-run checks.
+- `behavior-preservation-checker` — Proves a mechanical refactor changed nothing by diffing normalized ASTs or compiled output and reviewing only the hunks that fail to cancel.
+- `quality-ratchet-builder` — Baselines current lint, complexity, and type-error counts, then blocks any change that raises them, letting a legacy repo improve without a freeze.

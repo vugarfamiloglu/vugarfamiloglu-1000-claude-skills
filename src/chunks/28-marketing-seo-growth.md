@@ -1,0 +1,30 @@
+## Marketing, SEO & Growth
+
+- `seo-crawl-auditor` — Crawls a site for broken links, redirect chains, canonical conflicts, and orphan pages, then ranks fixes by traffic impact.
+- `robots-sitemap-validator` — Checks robots.txt directives and XML sitemaps against protocol limits like 50,000 URLs, flagging blocked canonicals and stale lastmod values.
+- `redirect-map-builder` — Maps old URLs to new ones for a site migration, detecting chains, loops, and unmapped pages before launch.
+- `internal-link-optimizer` — Builds an internal link graph, finds orphaned and over-linked pages, and proposes anchor placements that push equity to revenue pages.
+- `hreflang-matrix-validator` — Validates hreflang annotations for return-tag reciprocity, x-default coverage, and correct ISO 639-1 and 3166-1 codes across locale clusters.
+- `jsonld-schema-builder` — Emits schema.org JSON-LD with the required and recommended properties each rich result needs, then validates nesting and @id references.
+- `keyword-cluster-mapper` — Groups keywords into topic clusters by SERP overlap, assigns each cluster one target URL, and flags cannibalization between existing pages.
+- `content-brief-writer` — Turns a keyword cluster into a writer brief with search intent, entity coverage, heading outline, and required internal links.
+- `editorial-calendar-planner` — Sequences a quarterly content calendar from keyword clusters, balancing funnel stages, production capacity, and dependencies between pillar and supporting posts.
+- `content-decay-triager` — Finds pages losing impressions over time and sorts them into refresh, consolidate, redirect, or prune buckets with effort estimates.
+- `backlink-profile-auditor` — Scores a backlink profile for anchor over-optimization and spam patterns, then emits a Google-format disavow file for the worst domains.
+- `link-prospect-analyzer` — Scores link prospects on topical relevance, organic traffic, and outbound-link spam signals, then drafts a specific pitch angle per site.
+- `ad-account-structurer` — Designs Meta and Google campaign hierarchies with naming conventions, budget splits, and audience exclusions that prevent overlap and learning-phase resets.
+- `ad-creative-test-planner` — Builds a creative test matrix with one variable per cell, required sample size, and stopping rules that prevent calling winners early.
+- `ad-copy-policy-linter` — Checks ad copy against per-placement character limits and prohibited-claim policies for Google and Meta before assets reach review.
+- `negative-keyword-miner` — Parses search term reports to find wasted spend, then builds negative keyword lists at the right campaign or account level.
+- `email-deliverability-auditor` — Verifies SPF, DKIM, and DMARC alignment, checks blocklists and bounce rates, and traces why sends land in spam.
+- `lifecycle-email-mapper` — Maps trigger emails to lifecycle stages with entry conditions, exit criteria, frequency caps, and suppression rules that stop overlapping sends.
+- `newsletter-list-pruner` — Defines sunset and re-engagement rules for unengaged subscribers, protecting sender reputation while quantifying the list revenue you give up.
+- `landing-page-cro-auditor` — Scores a landing page on message match, friction, proof, and call-to-action clarity, then returns a ranked experiment backlog.
+- `pricing-page-designer` — Structures pricing tiers, anchor placement, feature-gating tables, and objection FAQs so visitors self-select a plan without contacting sales.
+- `growth-loop-mapper` — Diagrams acquisition loops as input, action, and output steps, then locates the constrained step and estimates cycle time and amplification.
+- `referral-program-designer` — Designs referral incentives, sharing surfaces, and fraud guards, then models payback against the k-factor needed to cover the reward cost.
+- `positioning-canvas-builder` — Derives positioning from competitive alternatives, unique attributes, and the value they enable, in that order, before naming a market category.
+- `brand-voice-guide-writer` — Codifies voice as tone dimensions, lexicon rules, and paired do/don't rewrites so every writer and model produces consistent copy.
+- `competitor-funnel-analyzer` — Tears down a competitor's ads, landing pages, pricing, and email flow, then names the positioning gaps you can attack.
+- `launch-campaign-planner` — Builds a T-minus launch timeline with channel sequencing, asset checklists, embargo handling, and a day-of runbook with named owners.
+- `social-cadence-planner` — Allocates a weekly posting matrix across platforms by content pillar and funnel stage, with distribution slots for each long-form asset.

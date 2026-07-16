@@ -1,0 +1,42 @@
+## Databases & Data Modeling
+
+- `schema-normalization-auditor` — Detects update anomalies and denormalization debt in a live schema, then proposes a 3NF or BCNF decomposition with migration steps.
+- `jsonb-document-modeler` — Decides which fields stay relational versus JSONB in Postgres, then picks GIN, jsonb_path_ops, or expression indexes to match query shapes.
+- `temporal-history-designer` — Builds system-versioned audit tables with triggers, tstzrange validity columns, and exclusion constraints when history must be queryable as of any timestamp.
+- `soft-delete-designer` — Adds deleted_at semantics with partial unique indexes, filtered views, and cascade rules so archived rows stop leaking into queries.
+- `primary-key-strategist` — Compares bigint identity, UUIDv4, UUIDv7, and ULID keys on index locality, page splits, and replication before a table exists.
+- `multi-tenant-schema-planner` — Chooses shared-table, schema-per-tenant, or database-per-tenant isolation and maps the migration, backup, and noisy-neighbour cost of each.
+- `check-constraint-auditor` — Finds business invariants enforced only in application code and emits CHECK, EXCLUDE, domain, and generated-column constraints that push them into the schema.
+- `mongo-document-modeler` — Decides embed versus reference per relationship in MongoDB using access patterns, document growth, and the 16MB limit.
+- `cassandra-partition-designer` — Derives Cassandra partition and clustering keys from query shapes, then flags wide rows, tombstone risk, and hot partitions.
+- `postgres-index-tuner` — Reads EXPLAIN ANALYZE output, finds missing or redundant indexes, and emits migration SQL when a query misses its latency budget.
+- `index-bloat-rebuilder` — Measures index bloat with pgstattuple, runs REINDEX CONCURRENTLY in safe order, and cleans up INVALID indexes left by failed rebuilds.
+- `mysql-innodb-index-advisor` — Tunes InnoDB clustered keys, secondary-index primary-key suffixes, and prefix indexes, reading EXPLAIN FORMAT=JSON for filesort and temporary-table spills.
+- `vector-index-tuner` — Tunes pgvector, Qdrant, or Milvus HNSW and IVFFlat parameters against a recall-versus-latency target using a measured ground-truth set.
+- `explain-plan-interpreter` — Walks EXPLAIN (ANALYZE, BUFFERS) node by node to spot row-estimate misses, disk spills, and loop counts driving the real cost.
+- `slow-query-triager` — Ranks pg_stat_statements or performance_schema output by total time rather than mean, then assigns each query cluster a concrete fix.
+- `orm-nplus-one-detector` — Instruments query logs from Prisma, ActiveRecord, or SQLAlchemy to find N+1 loops, then prescribes eager loading or dataloader batching.
+- `planner-statistics-tuner` — Fixes bad row estimates with ANALYZE targets, CREATE STATISTICS on correlated columns, and n_distinct overrides instead of reaching for query hints.
+- `neo4j-cypher-profiler` — Reads Neo4j PROFILE output for AllNodesScan and cartesian products, then adds label indexes and reshapes MATCH ordering.
+- `zero-downtime-migrator` — Sequences expand-migrate-contract phases so schema changes ship while old and new application versions both run against the same database.
+- `migration-lock-auditor` — Flags DDL that takes ACCESS EXCLUSIVE locks or rewrites a table, and replaces it with lock_timeout-guarded two-step alternatives.
+- `online-ddl-runner` — Drives gh-ost or pt-online-schema-change for MySQL ALTERs, sizing chunk, throttle, and cutover so replicas never fall behind.
+- `data-backfill-batcher` — Generates a resumable keyset-paginated backfill script with batch sizing, replication-lag throttling, and progress checkpoints for billion-row tables.
+- `isolation-level-selector` — Maps each required invariant to read-committed, repeatable-read, or serializable, naming the anomaly that level still allows and its retry cost.
+- `deadlock-forensics-analyzer` — Parses Postgres deadlock logs or InnoDB status output to reconstruct the lock cycle and enforce one consistent acquisition order.
+- `lock-contention-profiler` — Builds a blocking tree from pg_locks and pg_stat_activity to name the head blocker behind stalled writes and pile-ups.
+- `vacuum-bloat-tuner` — Tunes autovacuum thresholds and cost limits from dead-tuple counts, long transactions, and xid wraparound distance before bloat stalls writes.
+- `connection-pool-sizer` — Sizes PgBouncer or HikariCP pools from core count and workload mix, and flags prepared-statement breakage under transaction pooling mode.
+- `replication-lag-diagnoser` — Separates write, flush, and replay lag on Postgres standbys or MySQL replicas and traces each stage to its real bottleneck.
+- `pitr-restore-verifier` — Runs a timed point-in-time restore drill with pgBackRest or wal-g and reports the RPO and RTO actually achieved.
+- `partition-lifecycle-manager` — Builds declarative range or hash partitions, automates detach-and-archive with pg_partman, and verifies partition pruning appears in the plan.
+- `sharding-key-planner` — Picks a shard key that spreads writes evenly, bounds cross-shard joins, and leaves a resharding path before the first split.
+- `rls-policy-builder` — Writes Postgres row-level security policies for tenant isolation, checks BYPASSRLS and leaky-function exposure, and measures the plan cost added.
+- `redis-keyspace-designer` — Designs Redis key naming, TTLs, eviction policy, and structure choice, then hunts hot keys and unbounded collections with MEMORY USAGE.
+- `postgres-fts-builder` — Builds tsvector generated columns, GIN indexes, and pg_trgm fallback ranking so full-text search stays inside Postgres instead of a separate engine.
+- `elasticsearch-mapping-designer` — Designs Elasticsearch mappings, analyzers, and dynamic templates, then runs a zero-downtime reindex behind an alias swap.
+- `clickhouse-mergetree-tuner` — Chooses ClickHouse ORDER BY keys, partitioning, projections, and skip indexes, and diagnoses too-many-parts errors and merge backlog.
+- `sqlite-durability-tuner` — Sets SQLite journal_mode, synchronous, busy_timeout, and mmap_size for the workload, and resolves SQLITE_BUSY under concurrent writers.
+- `duckdb-memory-planner` — Sizes DuckDB memory_limit, threads, and temp_directory spilling, and rewrites joins that exceed RAM on out-of-core workloads.
+- `orphan-row-repairer` — Locates rows breaking an intended foreign key, scripts quarantine or repair batches, then adds the constraint using NOT VALID and VALIDATE.
+- `database-seed-builder` — Generates idempotent, FK-ordered seed scripts with deterministic IDs and referentially valid fake data for local and staging databases.

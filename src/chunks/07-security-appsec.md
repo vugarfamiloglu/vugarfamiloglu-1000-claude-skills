@@ -1,0 +1,42 @@
+## Security & AppSec
+
+- `stride-threat-modeler` — Builds a data-flow diagram, enumerates STRIDE threats per element and trust boundary, and ranks mitigations before design freeze.
+- `attack-tree-builder` — Decomposes an attacker goal into an attack tree, annotating each leaf with cost, skill, and detection likelihood to prioritize defenses.
+- `crypto-primitive-selector` — Picks AEAD ciphers, KDFs, and signature schemes for a stated threat model, rejecting ECB, static IVs, and homegrown constructions.
+- `rbac-role-designer` — Designs application role and permission matrices, collapses role explosion, and emits a deny-by-default table mapping every endpoint to required grants.
+- `abac-policy-author` — Writes attribute-based authorization policies in Rego or Cedar with fixtures covering allow, deny, conflicting-rule, and missing-attribute cases.
+- `rebac-relation-modeler` — Models Zanzibar-style relationship tuples for OpenFGA or SpiceDB, then validates the schema against expected check results and recursion depth limits.
+- `broken-authz-auditor` — Sweeps every handler for missing object-level ownership checks, surfacing IDOR and BOLA gaps that authentication middleware silently lets through.
+- `csp-policy-author` — Authors a nonce-based Content-Security-Policy, stages it through report-only collection, and folds violation reports into tightened directives without breaking the app.
+- `security-headers-hardener` — Sets HSTS, Referrer-Policy, Permissions-Policy, COOP/COEP, and Set-Cookie flags to correct values, then verifies them against live production responses.
+- `ssrf-defense-builder` — Adds allowlist URL validation, blocks cloud metadata and private ranges, and closes DNS rebinding and redirect-chain bypasses in outbound fetch code.
+- `deserialization-risk-auditor` — Finds unsafe pickle, Java, YAML, and .NET deserialization sinks reachable from untrusted input, and replaces them with schema-bound parsers.
+- `jwt-validation-hardener` — Fixes algorithm confusion, kid injection, unchecked aud and iss claims, and clock-skew handling wherever token verification runs.
+- `oauth-redirect-validator` — Enforces exact redirect_uri matching, PKCE, and state binding, then replays known authorization-code interception and mix-up attacks against your own flow.
+- `input-validation-schema-builder` — Places allowlist schema validation at each trust boundary, canonicalizing input once before checks so normalization gaps cannot smuggle payloads through.
+- `xss-sink-tracer` — Traces untrusted values into HTML, attribute, URL, and script sinks, then applies context-correct encoding, sanitization, or Trusted Types.
+- `sql-injection-auditor` — Audits every query construction site for identifier interpolation, ORM raw escapes, and second-order injection that parameterized-query habits alone miss.
+- `password-storage-migrator` — Tunes Argon2id or bcrypt parameters to a latency budget and rehashes legacy digests transparently at login without forcing a password reset.
+- `tls-config-hardener` — Selects protocol versions, cipher suites, and certificate validation settings, then confirms them with testssl.sh before the endpoint faces the internet.
+- `secret-rotation-planner` — Sequences zero-downtime credential rotation with dual-read grace windows, revocation checkpoints, and rollback steps for keys, tokens, and certificates.
+- `leaked-secret-responder` — Runs the post-leak drill for an exposed credential: revoke, rotate, hunt for abuse in logs, then scrub history and reissue.
+- `semgrep-rule-writer` — Encodes house security invariants as custom Semgrep rules with taint mode, test cases, and autofix, so reviewers stop repeating the same catch.
+- `sast-finding-triager` — Sorts Semgrep or CodeQL output into exploitable, unreachable, and false-positive buckets, and records suppressions with justification and expiry.
+- `dast-scan-orchestrator` — Configures authenticated ZAP or Nuclei scans against a staging target, seeding session tokens and scoping rules so crawls stay inside authorized hosts.
+- `secret-scanner-installer` — Wires gitleaks or TruffleHog into pre-commit and CI, backfills a full history scan, and tunes allowlists to keep the signal usable.
+- `security-regression-test-writer` — Converts each fixed vulnerability into a failing-then-passing test with the original payload, so the bug cannot silently return in a refactor.
+- `dependency-cve-triager` — Ranks advisory alerts by reachability, exploit maturity, and runtime exposure, then decides patch, pin, or accept with a written rationale.
+- `sbom-generator` — Emits CycloneDX or SPDX inventories from lockfiles and images, fills required component fields, and attaches the SBOM to the release artifact.
+- `dependency-pinning-enforcer` — Converts floating version ranges into hash-pinned lockfiles across npm, pip, and Actions, closing the window for dependency-confusion and tag-mutation attacks.
+- `build-provenance-attestor` — Signs build artifacts with cosign and emits SLSA in-toto provenance, then adds a verification gate that rejects unattested images at deploy.
+- `secure-review-checklister` — Applies per-language security review checklists to a diff, surfacing ecosystem traps like Python pickle, JavaScript prototype pollution, and PHP type juggling.
+- `pentest-scope-planner` — Drafts rules of engagement for an authorized test: in-scope hosts, excluded actions, testing window, evidence handling, and the abort contact.
+- `cvss-vector-scorer` — Builds a defensible CVSS v3.1 or v4.0 vector from a finding's real attack path, showing the reasoning behind every metric choice.
+- `incident-response-planner` — Produces a security incident runbook with severity ladder, on-call roles, containment gates, evidence preservation, and communication triggers before the first alert.
+- `tabletop-exercise-designer` — Scripts a tabletop scenario with timed injects, role assignments, and scoring rubric, then captures the gaps the room could not answer.
+- `security-postmortem-writer` — Writes a blameless security postmortem covering detection lag, containment timeline, root cause, and the control that should have caught it.
+- `breach-notification-mapper` — Maps incident facts to notification duties and clocks under GDPR, HIPAA, PCI, and state breach laws, flagging which deadline bites first.
+- `vuln-disclosure-handler` — Stands up security.txt and a coordinated disclosure policy, then triages inbound reports with acknowledgement, severity, fix, and credit timelines.
+- `soc2-control-mapper` — Maps SOC 2 Trust Services Criteria to concrete engineering controls and names the evidence artifact each one must produce during the audit window.
+- `iso27001-soa-builder` — Drafts an ISO 27001 Statement of Applicability, justifying each Annex A control's inclusion or exclusion and linking it to implemented practice.
+- `pci-scope-reducer` — Shrinks PCI DSS cardholder-data scope through tokenization, hosted fields, and network segmentation, then picks the SAQ type the design actually earns.

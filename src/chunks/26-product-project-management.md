@@ -1,0 +1,26 @@
+## Product & Project Management
+
+- `prd-spec-drafter` — Drafts a product requirements doc with problem framing, non-goals, success metrics, rollout plan, and open questions when a feature leaves discovery.
+- `prd-gap-auditor` — Audits a draft PRD for undefined success metrics, missing non-goals, unstated assumptions, and unowned dependencies before the spec review meeting.
+- `roadmap-horizon-planner` — Converts a ranked backlog into a now/next/later roadmap with themes, confidence bands, and dependency callouts instead of dated feature promises.
+- `okr-objective-designer` — Turns strategy statements into objectives with measurable key results, baselines, and targets, rejecting task lists and binary ship-dates disguised as outcomes.
+- `okr-checkin-scorer` — Scores each key result 0.0 to 1.0 at mid-quarter check-in, records confidence trend, and calls whether to re-scope, drop, or double down.
+- `rice-score-calculator` — Computes RICE scores from reach, impact, confidence, and effort inputs, flagging items whose ranking flips under plausible confidence error.
+- `kano-survey-analyzer` — Classifies features as must-be, performance, delighter, or indifferent from paired functional and dysfunctional survey answers using the Kano evaluation table.
+- `wsjf-backlog-ranker` — Ranks a SAFe backlog by weighted shortest job first, scoring business value, time criticality, risk reduction, and job size on Fibonacci scales.
+- `epic-story-slicer` — Splits oversized epics into vertical slices using SPIDR patterns, keeping every slice independently demoable and rejecting horizontal layer-by-layer tickets.
+- `acceptance-criteria-writer` — Converts a user story into testable Given/When/Then criteria covering happy path, edge cases, error states, and an explicit out-of-scope list.
+- `backlog-hygiene-auditor` — Sweeps an issue tracker for stale, duplicate, and unrefined tickets, proposing close, merge, or refine actions against agreed age thresholds.
+- `feature-request-triager` — Clusters inbound feature requests by underlying job, links them to canonical backlog entries, and replies to requesters with a routing decision.
+- `estimate-drift-auditor` — Compares past estimates against actual cycle times to expose systematic optimism and derive a calibration multiplier for the next planning round.
+- `throughput-forecast-simulator` — Runs Monte Carlo simulation over historical throughput to produce 50/85/95 percent delivery-date bands instead of a single committed ship date.
+- `sprint-capacity-planner` — Builds a sprint plan from real capacity minus holidays, on-call, and carryover, flagging over-commitment before the team locks the sprint goal.
+- `dependency-register-mapper` — Maps cross-team dependencies into a register with owner, needed-by date, and confirmation status, escalating any blocker the providing team has not acknowledged.
+- `risk-register-builder` — Builds a risk register scoring probability against impact, assigning owners, mitigation triggers, and review dates for every entry above the escalation threshold.
+- `critical-path-analyzer` — Computes critical path and float across a milestone dependency graph, identifying which slipping tasks actually move the launch date and which absorb slack.
+- `stakeholder-update-writer` — Composes a weekly stakeholder update with status color, deltas since last update, decisions needed, and top risks, cutting narrative filler.
+- `scope-cut-negotiator` — Produces a ranked scope-reduction menu with cost and user impact per cut when a date is at risk, forcing an explicit trade-off.
+- `launch-readiness-auditor` — Runs a go/no-go checklist across support, docs, legal, pricing, rollback, and on-call ownership, blocking launch on any unowned or unverified item.
+- `discovery-handoff-packager` — Packages research findings, settled scope, and open questions into an engineering-ready brief that separates decided calls from assumptions still under test.
+- `retro-action-tracker` — Structures a retrospective into owned, dated action items and tracks carryover across cycles, surfacing themes that reappear in three consecutive retros.
+- `incident-followup-router` — Turns incident postmortem actions into prioritized backlog tickets with owners and dates, promoting repeat root causes into named roadmap investments.

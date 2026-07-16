@@ -1,0 +1,24 @@
+## Business, Finance & Legal Ops
+
+- `nda-clause-comparator` — Compares an inbound NDA against a house baseline, flagging term length, residuals, non-solicit and jurisdiction drift for counsel review.
+- `msa-redline-drafter` — Drafts MSA redlines covering liability caps, indemnity, IP ownership and termination rights, marking each change for a qualified lawyer to approve.
+- `sow-scope-definer` — Writes a SOW with deliverables, acceptance criteria, change-order triggers and payment milestones, removing the ambiguities that cause scope disputes.
+- `safe-note-modeler` — Models SAFE conversion across valuation caps, discounts and MFN terms, showing resulting dilution per round for founders to verify with counsel.
+- `employment-agreement-reviewer` — Reviews employment and contractor agreements for IP assignment, classification risk and restrictive covenants, flagging state-specific gaps for counsel.
+- `pricing-model-selector` — Compares per-seat, usage, tiered and hybrid packaging against cost floors and willingness-to-pay data, recommending one model with stated trade-offs.
+- `invoice-compliance-checker` — Checks invoices for VAT numbers, reverse-charge notes, sequential numbering and payment terms that tax authorities require before sending.
+- `collections-dunning-sequencer` — Sequences dunning notices, service-suspension thresholds and escalation timing for overdue invoices, keeping the tone recoverable until the final demand.
+- `cash-flow-forecaster` — Projects thirteen-week cash flow from AR aging, AP schedules, payroll dates and committed spend, surfacing the weeks that go negative.
+- `cap-table-auditor` — Audits a cap table for option-pool math, vesting schedules, fully-diluted counts and 409A staleness, listing every error for the company lawyer.
+- `equity-grant-packager` — Assembles option grants with strike, vesting, cliff, exercise window and 83(b) timing, flagging which resolutions need board approval first.
+- `unit-economics-analyzer` — Breaks contribution margin down by cohort from CAC, COGS, payback and retention curves, testing whether the economics survive at scale.
+- `vendor-risk-screener` — Screens a new vendor for security posture, data residency, subprocessor chain and financial stability before procurement commits to a contract.
+- `gdpr-ropa-builder` — Builds an Article 30 record of processing activities from system inventories, mapping lawful basis, retention and transfer mechanism per data flow.
+- `dpa-clause-checker` — Checks a data processing agreement against Article 28 duties, subprocessor consent, SCC modules and audit rights, listing gaps for counsel.
+- `soc2-readiness-mapper` — Maps existing controls to Trust Services Criteria, naming evidence owners and the gaps that would fail a Type II observation window.
+- `entity-formation-planner` — Compares LLC, C-corp and holding structures against fundraising, tax and multi-state plans, listing the filings each option needs before counsel signs.
+- `investor-update-writer` — Drafts a monthly investor update with metrics, burn, runway, asks and misses, keeping the bad news in the first third.
+- `expense-policy-drafter` — Drafts an expense policy with per-diem limits, approval thresholds, receipt rules and exceptions, sized to real headcount and travel patterns.
+- `sales-tax-nexus-mapper` — Maps where sales-tax and VAT registration obligations trigger from revenue, staff and inventory, listing thresholds for an accountant to confirm.
+- `insurance-coverage-reviewer` — Reviews E&O, D&O, cyber and general liability policies against real exposure, flagging sublimits, exclusions and gaps for a broker.
+- `trademark-conflict-triager` — Screens a proposed name against Nice classes, existing marks and common-law use, ranking conflict risk before a trademark attorney files.

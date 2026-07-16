@@ -1,0 +1,42 @@
+## Languages & Runtimes
+
+- `ts-type-narrowing-debugger` — Traces why TypeScript control-flow analysis widens a union, then fixes guards, discriminants, and assertion signatures to restore narrowing.
+- `ts-generic-variance-designer` — Designs generic signatures with correct variance, conditional types, and inference sites when a library API leaks `any` or breaks inference.
+- `ts-strict-mode-migrator` — Enables TypeScript strict flags one at a time, measures error fallout per flag, and stages the fixes across incremental pull requests.
+- `js-event-loop-tracer` — Maps microtask, macrotask, and timer ordering to explain surprising async output, starvation, or unhandled rejection timing in Node and browsers.
+- `esm-cjs-interop-resolver` — Diagnoses `ERR_REQUIRE_ESM`, dual-package hazards, and default-export mismatches, then picks a conditional exports map satisfying both module systems.
+- `python-gil-workload-router` — Decides between threads, `multiprocessing`, asyncio, or free-threaded builds by classifying a workload's GIL contention and serialization cost.
+- `python-typing-adoption-planner` — Adds type hints to untyped Python incrementally, choosing mypy or pyright strictness per module and writing stubs for untyped dependencies.
+- `python-asyncio-blocking-auditor` — Finds synchronous calls blocking the event loop, misused `run_in_executor`, and unawaited coroutines, then rewrites them with structured concurrency.
+- `python-deprecation-triager` — Triages DeprecationWarnings and removed stdlib modules when moving between CPython releases, then patches each breakage in dependency order.
+- `rust-ownership-refactorer` — Rewrites code the borrow checker rejects, choosing between lifetimes, split borrows, interior mutability, or restructured ownership instead of reflexive cloning.
+- `rust-unsafe-soundness-auditor` — Audits `unsafe` blocks for aliasing, alignment, and validity violations, runs Miri, and writes the `# Safety` contract each call site requires.
+- `rust-async-cancellation-auditor` — Finds futures dropped at await points that lose state, then fixes `Send` bounds, cancellation safety, and blocking calls inside Tokio tasks.
+- `rust-macro-expansion-debugger` — Debugs declarative and procedural macros with `cargo expand`, fixing hygiene collisions, token-stream spans, and errors that point at generated code.
+- `go-goroutine-leak-hunter` — Finds goroutines blocked on channels or missing context cancellation using pprof and goleak, then repairs the lifecycle that never terminates.
+- `go-error-wrapping-linter` — Enforces `errors.Is` and `errors.As` over string matching, adds `%w` wrapping at real boundaries, and strips redundant error decoration.
+- `go-generics-constraint-designer` — Decides when type parameters beat interfaces, writes constraint sets with `~` approximation, and works around inference limits forcing explicit instantiation.
+- `java-virtual-thread-migrator` — Converts thread-pool and reactive code to virtual threads, finding pinning from `synchronized` blocks and native calls that block carrier threads.
+- `jvm-gc-tuner` — Picks between G1, ZGC, Shenandoah, or Parallel from allocation rate and pause targets, then sets heap flags and reads GC logs.
+- `csharp-nullable-annotation-migrator` — Turns on nullable reference types per project, resolves the resulting warnings, and annotates public APIs without scattering null-forgiving operators.
+- `dotnet-async-deadlock-debugger` — Diagnoses `ConfigureAwait`, sync-over-async, and `ValueTask` misuse that deadlocks or starves the thread pool in .NET applications.
+- `kotlin-coroutine-scope-auditor` — Fixes structured-concurrency leaks from `GlobalScope`, wrong dispatchers, and swallowed `CancellationException` across suspend functions, flows, and lifecycle-bound scopes.
+- `kotlin-java-interop-designer` — Adds `@JvmStatic`, `@JvmOverloads`, and platform-type null guards so mixed Kotlin and Java modules compile cleanly with an idiomatic Java surface.
+- `swift-concurrency-migrator` — Moves callback and GCD code to async/await with actors, resolving `Sendable` conformance errors and data-race warnings under strict concurrency checking.
+- `swift-arc-cycle-breaker` — Traces retain cycles through closures, delegates, and `Task` captures, then applies `weak` or `unowned` capture lists without introducing crashes.
+- `ruby-method-lookup-tracer` — Traces Ruby method resolution through singleton classes, prepended modules, and refinements to explain why an unexpected implementation wins the ancestor chain.
+- `php-version-upgrade-planner` — Maps deprecations and breaking changes across PHP releases, applies Rector rule sets, and orders fixes so each step stays deployable.
+- `beam-process-memory-profiler` — Explains per-process heaps, refc binary sharing, and mailbox growth, then fixes memory blowups in long-lived Elixir or Erlang processes.
+- `scala-implicit-resolution-tracer` — Explains why a given or implicit fails to resolve or picks the wrong instance, then restructures the typeclass hierarchy deterministically.
+- `zig-allocator-strategy-planner` — Picks arena, GPA, fixed-buffer, or page allocators per call site and threads `errdefer` cleanup through Zig code that must not leak.
+- `haskell-space-leak-fixer` — Locates thunk buildup with heap profiling, then applies strict folds, bang patterns, and `seq` to bound memory in lazy code.
+- `lua-c-api-mapper` — Balances the Lua C API stack, defines userdata metatables, and handles `lua_error` longjmp semantics when embedding an interpreter in a host program.
+- `bash-strict-mode-hardener` — Applies `set -euo pipefail`, IFS discipline, and quoting fixes, then explains where strict mode silently changes an existing script's behavior.
+- `posix-shell-portability-validator` — Flags bashisms, GNU-only flags, and `/bin/sh` assumptions with shellcheck, then rewrites the script to run on dash, BusyBox, and macOS.
+- `ffi-boundary-designer` — Designs FFI layers across the C ABI, JNI, PyO3, cgo, or N-API, pinning ownership, string encoding, and exception translation per crossing.
+- `memory-model-reasoner` — Explains acquire/release, sequential consistency, and data-race rules for a target language, then picks the weakest atomic ordering that stays correct.
+- `language-port-planner` — Plans a port between languages by mapping idioms, error models, and concurrency primitives, then sequencing an incremental migration with parity tests.
+- `exception-safety-auditor` — Audits cleanup paths across try/finally, `defer`, RAII, and context managers, finding resources leaked when an error unwinds mid-operation.
+- `pattern-matching-refactorer` — Converts nested conditionals and visitor classes into exhaustive pattern matches using the target language's match, switch, or destructuring syntax.
+- `regex-engine-dialect-mapper` — Maps regex syntax across PCRE, RE2, ECMAScript, Python `re`, and POSIX, flagging features that silently change behavior or backtrack catastrophically.
+- `numeric-precision-auditor` — Finds overflow, float precision loss, and rounding-mode differences in a language's numeric types, then picks decimal, bigint, or checked arithmetic.

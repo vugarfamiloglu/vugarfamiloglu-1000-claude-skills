@@ -1,0 +1,24 @@
+## Technical Writing & Documentation
+
+- `openapi-description-filler` — Fills missing summaries, parameter descriptions, and response examples in an OpenAPI spec, enforcing consistent verb mood and documented error statuses per endpoint.
+- `api-error-catalog-generator` — Documents every error an API returns with code, HTTP status, cause, and remediation, cross-checking the catalog against error paths in source.
+- `readme-skeleton-builder` — Builds a README ordered as pitch, quickstart, install, usage, and links, keeping the first runnable command above the fold.
+- `troubleshooting-page-builder` — Turns recurring support tickets into a symptom-first troubleshooting page, pairing each error signature with its cause and a verified fix.
+- `changelog-entry-curator` — Turns merged pull requests into Keep a Changelog sections, sorting entries into Added, Changed, Deprecated, Removed, Fixed, and Security while dropping internal refactors.
+- `release-notes-composer` — Composes user-facing release notes for a version, leading with impact and upgrade steps rather than commit titles or ticket numbers.
+- `diataxis-doc-classifier` — Classifies each docs page as tutorial, how-to, reference, or explanation, then splits pages that mix two Diátaxis modes into separate documents.
+- `tutorial-path-designer` — Designs a learning-oriented tutorial with one guaranteed happy path, no optional branches, and a working artifact the reader finishes holding.
+- `runbook-procedure-writer` — Writes an operational runbook with preconditions, copy-pasteable commands, expected output per step, escalation contacts, and a rollback path for each action.
+- `docs-style-guide-linter` — Enforces a docs style guide with Vale rules covering voice, tense, person, and banned phrasing, failing pull requests on new violations.
+- `terminology-glossary-keeper` — Builds a product glossary and flags synonym drift where docs, UI strings, and code call one concept by three different names.
+- `docs-nav-architect` — Restructures documentation navigation around reader tasks instead of team org charts, capping tree depth and eliminating orphan pages no link reaches.
+- `docs-ci-pipeline-builder` — Wires a docs-as-code pipeline that builds, link-checks, spell-checks, and deploys a preview per pull request, failing on broken anchors.
+- `doc-freshness-auditor` — Flags pages whose referenced endpoints, flags, or version pins changed since last review, ranking staleness by page traffic and support ticket volume.
+- `doc-snippet-executor` — Extracts fenced code and shell blocks from documentation, runs them in a clean container during CI, and fails on the first divergent output.
+- `migration-guide-writer` — Writes an upgrade guide with a breaking-change table, before-and-after diffs, codemod commands, and an ordered path for users skipping several versions.
+- `deprecation-notice-writer` — Writes deprecation notices naming the removal version, replacement API, and migration snippet, then mirrors the same wording into docs, changelog, and runtime warnings.
+- `error-message-rewriter` — Rewrites error strings to state what failed, why it failed, and the next action, attaching stable error codes and documentation links.
+- `onboarding-path-mapper` — Maps a new-contributor onboarding path with verified setup commands, an architecture tour, ownership pointers, and a scoped first issue to ship.
+- `code-comment-auditor` — Audits comments for restating code, stale claims, and missing rationale, rewriting each survivor to explain why the code exists rather than what it does.
+- `docstring-coverage-enforcer` — Enforces docstring coverage on exported symbols using per-language conventions like JSDoc, Google style, and rustdoc, failing CI below an agreed threshold.
+- `mermaid-diagram-composer` — Composes Mermaid sequence and flow diagrams for docs, capping node counts for readability and matching every label to real source identifiers.

@@ -1,0 +1,24 @@
+## Content, Media & Creative Production
+
+- `ffmpeg-filtergraph-composer` — Builds FFmpeg filter_complex graphs for overlay, concat, scale and audio mixing, validating stream labels and pad counts before running.
+- `video-encode-preset-picker` — Maps a delivery target to codec, bitrate ladder, container and pixel format, emitting the matching FFmpeg or HandBrake preset.
+- `subtitle-format-migrator` — Converts between SRT, WebVTT, ASS and TTML, preserving styling and cue timing while fixing overlaps and frame-rate drift.
+- `caption-readability-auditor` — Checks caption cues against characters-per-second, line-length and minimum-duration limits, flagging every cue that outruns broadcast and streaming style guides.
+- `podcast-audio-restorer` — Chains noise reduction, de-essing, de-reverb and click removal in the order that avoids artifacts, auditioning each stage before render.
+- `loudness-target-normalizer` — Normalizes audio to per-platform LUFS and true-peak targets with two-pass ffmpeg loudnorm, reporting measured integrated loudness and range.
+- `podcast-rss-feed-validator` — Validates a podcast feed against Apple and Spotify namespace rules, catching missing enclosures, unstable GUIDs and artwork that fails ingestion.
+- `image-prompt-iterator` — Turns a visual brief into structured generation prompts with seed, aspect and negative controls, logging every variant for reproducible re-rolls.
+- `photo-retouch-sequencer` — Orders raw development, blemish work, dodge-and-burn, frequency separation and output sharpening so every edit stays non-destructive and re-editable.
+- `thumbnail-variant-designer` — Drafts thumbnail variants with subject crop, text-safe zones and contrast checks, then previews each at small-player size before export.
+- `video-script-drafter` — Drafts a shootable script with hook, beats, B-roll cues and word-count timing, hitting the target runtime within ten percent.
+- `storyboard-shot-planner` — Breaks a script into numbered shots with framing, lens, movement and duration, emitting a shot list and animatic timing sheet.
+- `vertical-video-reframer` — Reframes horizontal footage to 9:16 with subject-tracked crops, safe-area guards for platform chrome, and burned-in caption placement.
+- `youtube-chapter-generator` — Derives timestamped chapters from a transcript, enforcing the zero-start rule, three-chapter minimum and ten-second floor YouTube requires.
+- `media-asset-librarian` — Designs naming, folder and sidecar-metadata conventions for footage and stills, then bulk-renames and indexes an existing unsorted library.
+- `color-grade-planner` — Plans a grade from log normalization through primaries, secondaries and look, checking scopes stay inside broadcast-legal levels at each stage.
+- `lut-colorspace-mapper` — Maps camera log profiles to the correct conversion LUT and working color space, preventing double transforms and clipped highlights.
+- `voiceover-script-marker` — Marks a script with pronunciation, pacing and emphasis cues, then splits it into takes sized for clean recording and retakes.
+- `lower-third-motion-builder` — Builds lower-third and title animations with shared easing, hold and exit timings, exporting templates that survive text-length changes.
+- `story-beat-doctor` — Diagnoses a draft against beat structure, stakes escalation and turn placement, then prescribes specific cuts and reorderings with stated reasons.
+- `production-calendar-builder` — Sequences shoot days, edit buffers and publish slots into a calendar that respects real turnaround times and batch capacity.
+- `longform-clip-harvester` — Scans a transcript for self-contained moments with hooks, then cuts timestamped clip candidates ranked by payoff and standalone clarity.

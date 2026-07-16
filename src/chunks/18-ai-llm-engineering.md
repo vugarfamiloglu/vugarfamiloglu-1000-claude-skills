@@ -1,0 +1,42 @@
+## AI & LLM Engineering
+
+- `prompt-refactor-planner` — Splits a bloated prompt into ordered sections, extracts few-shot blocks, then re-runs evals to prove behaviour held after rewriting.
+- `few-shot-example-curator` — Selects, orders, and balances few-shot exemplars to counter recency and label bias when a prompt's accuracy plateaus.
+- `json-schema-conformer` — Constrains model output to a JSON Schema, adds a validate-and-repair loop, and flags keywords the provider silently ignores.
+- `grammar-constrained-decoder` — Writes GBNF or regex grammars for Outlines, XGrammar, or llama.cpp so open-weight models emit parseable output every call.
+- `streaming-output-parser` — Assembles SSE deltas into usable state, parsing incomplete JSON safely so streaming UIs render partial structured output without crashing.
+- `rag-chunking-planner` — Picks chunk size, overlap, and split boundaries from document structure, then measures retrieval hit rate across the candidate settings.
+- `chunk-context-enricher` — Prepends document titles, breadcrumbs, and LLM-written context to each chunk before embedding, cutting retrieval misses on ambiguous fragments.
+- `hybrid-search-fuser` — Combines BM25 and dense retrieval with reciprocal rank fusion, tuning weights and k on a labelled query set.
+- `reranker-cascade-tuner` — Sizes the retrieve-then-rerank cascade, choosing cross-encoder top-k and cutoff scores when recall is fine but precision drags.
+- `retrieval-recall-evaluator` — Scores retrieval alone with recall@k, MRR, and nDCG on golden query-document pairs before blaming the generator for bad answers.
+- `citation-span-validator` — Forces span-level citations in RAG answers and verifies each quoted span appears verbatim in the retrieved source text.
+- `embedding-model-selector` — Benchmarks candidate embedding models on your own labelled pairs instead of MTEB averages, weighing dimension, cost, and domain fit.
+- `retrieval-query-expander` — Rewrites user queries with HyDE, multi-query, and step-back variants, measuring which expansion lifts recall on ambiguous questions.
+- `embedding-compression-tuner` — Shrinks vector storage with Matryoshka truncation and int8 or binary quantization, plotting the recall lost at each compression step.
+- `llm-eval-harness-builder` — Scaffolds a versioned eval suite with dataset, task runner, scorers, and a CI report before any prompt ships to production.
+- `llm-judge-calibrator` — Aligns an LLM judge to human labels, measuring agreement and correcting position, verbosity, and self-preference bias in the rubric.
+- `eval-dataset-curator` — Builds a golden eval set from production traces, stratifying by difficulty, deduplicating near-matches, and checking for training-data leakage.
+- `hallucination-rate-auditor` — Measures groundedness by decomposing answers into atomic claims and checking each against source context, reporting a per-release hallucination rate.
+- `prompt-regression-gate` — Blocks a prompt or model change in CI when eval scores drop beyond the noise band, using paired significance tests.
+- `finetune-vs-rag-decider` — Decides whether a task needs retrieval, fine-tuning, or better prompting, using failure-mode evidence rather than instinct, before budget is committed.
+- `sft-dataset-formatter` — Converts raw conversations into JSONL with the model's exact chat template, masking prompt tokens so only completions contribute loss.
+- `lora-adapter-tuner` — Sets LoRA rank, alpha, dropout, and target modules for a given base model and dataset size, then checks for overfitting.
+- `prompt-injection-hardener` — Hardens an LLM feature against injected instructions in retrieved or user content using delimiters, spotlighting, provenance tags, and privilege separation.
+- `llm-redteam-prober` — Runs a jailbreak and injection attack corpus against a deployed integration, scoring bypass rate per attack family and logging survivors.
+- `content-filter-calibrator` — Calibrates moderation thresholds per category against a labelled sample, trading false positives for false negatives with the risk owner's numbers.
+- `pii-redaction-gateway` — Strips PII from prompts before they leave your network and rehydrates placeholders in responses, logging every redaction for audit.
+- `token-cost-accountant` — Attributes token spend per feature, tenant, and route using the provider's own tokenizer, then flags the queries burning the budget.
+- `prompt-cache-optimizer` — Reorders prompts so the stable prefix stays byte-identical, places cache breakpoints, and reports hit rate against the minimum cacheable length.
+- `semantic-cache-builder` — Caches responses by embedding similarity with a tuned threshold, plus namespace and invalidation rules that stop stale answers being served.
+- `model-cost-router` — Routes each request to the cheapest model that passes its eval bar, with escalation rules and a measured cost-per-solved-task.
+- `inference-latency-budgeter` — Divides an end-to-end latency target into TTFT, inter-token, retrieval, and guardrail budgets, then names which stage broke the SLO.
+- `vllm-server-tuner` — Tunes vLLM knobs like max_num_seqs, gpu_memory_utilization, and chunked prefill against a measured request mix when GPU throughput disappoints.
+- `local-model-quantizer` — Chooses GGUF, AWQ, or GPTQ quantization for a VRAM budget, computing weight and KV cache footprint before writing the Ollama Modelfile.
+- `batch-inference-runner` — Ships offline jobs through provider batch APIs at discount, handling shard sizing, partial failures, and reconciliation of results to input rows.
+- `vision-token-estimator` — Computes image token cost from resolution and tiling rules per provider, then resizes inputs before an upload blows the budget.
+- `document-vision-extractor` — Extracts structured fields and tables from page images with a vision model, emitting per-field confidence and a human review queue.
+- `llm-trace-instrumenter` — Instruments an LLM app with OpenTelemetry GenAI semantic conventions so prompts, tokens, and retrieval spans land in Langfuse or Phoenix.
+- `online-eval-sampler` — Samples live traffic, scores it with reference-free judges, and alerts when quality drifts before users report the regression.
+- `model-capability-mapper` — Tabulates context limits, modality support, pricing, and feature gaps across candidate models so selection stops running on stale assumptions.
+- `model-migration-planner` — Plans a swap to a new model with prompt portability checks, re-baselined evals, shadow traffic, and a rollback trigger.
